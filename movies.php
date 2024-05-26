@@ -19,20 +19,7 @@
 		<button class="button-value"> Sci-fi </button>
 		<button class="button-value"> Horror </button>
 </div>
-<!--<div id="filterContainer">
-    <li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle dropdown_filter" href="#" id="filterIcon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				<i class="fa fa-filter"></i>
-			</a>
-			<ul class="dropdown-menu filterButtons" aria-labelledby="filterIcon" data-bs-popper="none">
-				<li><button class="button-value">Action</button></li>
-				<li><button class="button-value">Comedy</button></li>
-				<li><button class="button-value">Romance</button></li>
-				<li><button class="button-value">Sci-fi</button></li>
-				<li><button class="button-value">Horror</button></li>
-			</ul>
-		</li>
-	</div>-->
+
 
 <div class="row_container">
     <div class="row">

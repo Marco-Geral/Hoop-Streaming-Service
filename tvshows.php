@@ -10,6 +10,17 @@
 </head>
 
 <body>
+<!-- filter begins -->
+<div id="buttons">
+		<button class="button-value"> Action </button>
+		<button class="button-value"> Comedy </button>
+		<button class="button-value"> Romance </button>
+		<button class="button-value"> Sci-fi </button>
+		<button class="button-value"> Horror </button>
+</div>  
+<!-- filter ends -->
+
+
 <div class="row_container">
     <div class="row">
         <h1 class="row_title">TRENDING NOW</h1>
