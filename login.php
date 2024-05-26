@@ -17,11 +17,11 @@
          </div>
          <form action="#">
             <div class="field">
-               <input type="text" required>
+               <input type="text" required; id = "login-email">
                <label>Email Address</label>
             </div>
             <div class="field">
-               <input type="password" required>
+               <input type="password" required; id = "login-password">
                <label>Password</label>
             </div>
             <div class="content">
@@ -34,7 +34,7 @@
                </div> -->
             </div>
             <div class="field">
-               <input type="submit" value="Login">
+               <input type="submit" value="Login" id = "submit">
             </div>
             <div class="signup-link">
                Not a member? <a href="register.php">Signup now</a>
