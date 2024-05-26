@@ -218,7 +218,7 @@
 			</section>
 
             
-			<br>
+			
 			<br>
 
 			<!-- continue section starts -->
