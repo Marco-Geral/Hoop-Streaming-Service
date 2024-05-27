@@ -42,8 +42,4 @@
          </form>
       </div>
    </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> bb2bda8 (changed p in profile to input)

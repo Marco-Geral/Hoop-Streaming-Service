@@ -27,6 +27,12 @@ a:hover{
 .inside-info{
     margin-top: 100px;
 }
+
+.inside-info input {
+    position: relative; /* Set position to relative */
+    z-index: 1; /* Ensure the inputs have a higher z-index than other elements */
+}
+
 .custom-heading {
     font-size: 30px;
     color: white;

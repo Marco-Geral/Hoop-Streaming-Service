@@ -18,13 +18,16 @@
 <body>
 
 <div class="osahan-user-media-body">
-    <div class="inside-info">
-                                <h6 class="mb-2 custom-heading">John Doe</h6>
-                                <p class="mb-1 custom-paragraph">098 785 2231</p>
-                                <p class="custom-paragraph">johhnyboi@gmail.com</p>
-                                <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3" data-toggle="modal" data-target="#edit-profile-modal" href="#"><i class="icofont-ui-edit"></i> EDIT</a></p>
+<div class="inside-info">  
+    <!-- username -->
+    <input class="mb-2 custom-paragraph" placeholder="John Doe" style = "color: black">
+    <!-- user phone number -->
+    <input type="tel" class="mb-1 custom-paragraph" placeholder="098 785 2231">
+    <!-- user email -->
+    <input type="email" class="custom-paragraph" placeholder="johhnyboi@gmail.com">
+    <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3" data-toggle="modal" data-target="#edit-profile-modal" href="#"><i class="icofont-ui-edit"></i> EDIT</a></p>
 </div>
-     </div>
+</div>
        
 
 <!--favourites starts -->
@@ -81,6 +84,7 @@
 					</div>
 					</div>
 					<div class="col-md-3 col-3 p-0">
+                        <!-- ratings -->
 					<div class="spec_1imi1r">
 						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">6.1</span></h6>
 					</div>
@@ -225,18 +229,3 @@
 </html>
 
 <?php include 'footer.php'; ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
