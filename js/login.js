@@ -22,7 +22,7 @@ submit.addEventListener('click', function(){//add an event listener to the submi
 
 function login(email, password){
     var req = new XMLHttpRequest();
-    req.open("POST", "https://wheatley.cs.up.ac.za/u23533693/COS221/221edited-api.php", true);//send a request to the api
+    req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//send a request to the api
     var info = [];
     req.onreadystatechange = function () {
         if (req.readyState == 4 ){
@@ -35,6 +35,9 @@ function login(email, password){
         "email": email,
         "password": password
     });
+    
+    var basicAuth = btoa("u23584565:2023Tukkie2023");
+    req.setRequestHeader("Authorization", "Basic" + basicAuth);
     req.send(load);
 }
 

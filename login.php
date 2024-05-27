@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <title>HOOP</title>
       <link rel="stylesheet" href="css/login.css">
+      <script type="text/javascript" src="js/login.js"></script>
    </head>
    <body>
 
@@ -42,8 +43,4 @@
          </form>
       </div>
    </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> bb2bda8 (changed p in profile to input)
