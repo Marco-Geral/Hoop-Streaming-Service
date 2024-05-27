@@ -36,7 +36,7 @@
 		  </li>
 
 		  <li class="nav-item">
-			<a class="nav-link" href="shows.php">TV Shows </a>
+			<a class="nav-link" href="tvshows.php">TV Shows </a>
 		  </li>
 		
 		</ul>

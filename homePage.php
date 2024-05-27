@@ -407,7 +407,7 @@
 			</div>
 			<div class="row spec_1 text-center mt-5">
 			<div class="col-md-12">
-			<h5 class="mb-0 text-uppercase"><a class="button" href="#"> BROWSE ALL TV SHOWS</a></h5>
+			<h5 class="mb-0 text-uppercase"><a class="button" href="tvshows.php"> BROWSE ALL TV SHOWS</a></h5>
 			</div>
 			</div>
 			</div>
@@ -430,7 +430,7 @@
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/10.jpg" class="w-100" alt="abc">
+					<img src="img/10.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -440,7 +440,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">5.9</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">5.9</span></h6>
 					</div>
 					</div>
 				</div>
@@ -449,13 +449,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">Ce Of Entro</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Ce Of Entro</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/9.jpg" class="w-100" alt="abc">
+					<img src="img/9.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -465,7 +465,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">6.1</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">6.1</span></h6>
 					</div>
 					</div>
 				</div>
@@ -474,13 +474,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">White Panther</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">White Panther</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/11.jpg" class="w-100" alt="abc">
+					<img src="img/11.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -490,7 +490,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">7.1</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">7.1</span></h6>
 					</div>
 					</div>
 				</div>
@@ -499,13 +499,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">160 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">Coming Soon</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Coming Soon</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/12.jpg" class="w-100" alt="abc">
+					<img src="img/12.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -515,7 +515,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">8.1</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">8.1</span></h6>
 					</div>
 					</div>
 				</div>
@@ -524,13 +524,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">Handmaiden</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Handmaiden</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/13.jpg" class="w-100" alt="abc">
+					<img src="img/13.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -540,7 +540,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">6.9</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">6.9</span></h6>
 					</div>
 					</div>
 				</div>
@@ -549,13 +549,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">The Silence</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">The Silence</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/14.jpg" class="w-100" alt="abc">
+					<img src="img/14.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -565,7 +565,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">8.4</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">8.4</span></h6>
 					</div>
 					</div>
 				</div>
@@ -574,7 +574,7 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">Monospaced</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Monospaced</a></h5>
 				</div>
 				</div>
 			</div>
@@ -582,7 +582,7 @@
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/15.jpg" class="w-100" alt="abc">
+					<img src="img/15.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -592,7 +592,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">5.9</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">5.9</span></h6>
 					</div>
 					</div>
 				</div>
@@ -601,13 +601,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">Ce Of Entro</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Ce Of Entro</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/16.jpg" class="w-100" alt="abc">
+					<img src="img/16.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -617,7 +617,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">6.1</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">6.1</span></h6>
 					</div>
 					</div>
 				</div>
@@ -626,13 +626,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">White Panther</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">White Panther</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/17.jpg" class="w-100" alt="abc">
+					<img src="img/17.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -642,7 +642,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">7.1</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">7.1</span></h6>
 					</div>
 					</div>
 				</div>
@@ -651,13 +651,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">160 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">Coming Soon</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Coming Soon</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/18.jpg" class="w-100" alt="abc">
+					<img src="img/18.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -667,7 +667,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">8.1</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">8.1</span></h6>
 					</div>
 					</div>
 				</div>
@@ -676,13 +676,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">Handmaiden</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Handmaiden</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/19.jpg" class="w-100" alt="abc">
+					<img src="img/19.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -692,7 +692,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">6.9</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">6.9</span></h6>
 					</div>
 					</div>
 				</div>
@@ -701,13 +701,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">The Silence</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">The Silence</a></h5>
 				</div>
 				</div>
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
 				<div class="spec_1imi clearfix">
-					<img src="img/20.jpg" class="w-100" alt="abc">
+					<img src="img/20.jpg" class="w-100 images" alt="abc">
 				</div>
 					<div class="spec_1imi1 row  m-0 w-100 h-100 clearfix position-absolute bg_col top-0">
 					<div class="col-md-9 col-9 p-0">
@@ -717,7 +717,7 @@
 					</div>
 					<div class="col-md-3 col-3 p-0">
 					<div class="spec_1imi1r">
-						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">8.4</span></h6>
+						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green MOrating">8.4</span></h6>
 					</div>
 					</div>
 				</div>
@@ -726,13 +726,13 @@
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
 			<span class="col_red">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
-				<h5 class="mb-0 fs-6"><a class="text-white" href="#">Monospaced</a></h5>
+				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Monospaced</a></h5>
 				</div>
 				</div>
 			</div>
 			<div class="row spec_1 text-center mt-5">
 			<div class="col-md-12">
-			<h5 class="mb-0 text-uppercase"><a class="button" href="#"> BROWSE ALL MOVIES</a></h5>
+			<h5 class="mb-0 text-uppercase"><a class="button" href="movies.php"> BROWSE ALL MOVIES</a></h5>
 			</div>
 			</div>
 			</div>
