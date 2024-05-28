@@ -223,6 +223,61 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });*/
 </script> -->
+
+<!-- Overlay -->
+<div id="overlay" class="modal-overlay"></div>
+
+<!-- Modal Content -->
+<div id="movie-info" class="modal-content">
+    <span class="close">&times;</span>
+    <img src="img/large-movie1.jpg" alt="Movie Poster" class="movie_poster">
+    <h1>Title of the Movie</h1>
+    <p>Description of the movie...</p>
+    <p>Rating: 3</p>
+    <p>Release Date: 2024-01-03</p>
+    <ul>
+        <li>Actor 1</li>
+        <li>Actor 2</li>
+    </ul>
+    <!--<div class="info-poster-container">
+    <div class="info-content">
+         Informational content goes here 
+        <h2>Title of the Movie</h2>
+        <p>Description of the movie...</p>
+        <p>Rating: 4/5</p>
+        <p>Release Date: 2024-01-01</p>
+        <ul>
+            <li>Actor 1</li>
+            <li>Actor 2</li>
+             More actors 
+        </ul>
+    </div>
+    <div class="movie-poster">
+        <img src="img/large-movie1.jpg" alt="Movie Poster">
+    </div>
+    </div>-->
+
+    <!-- Play button or any other controls can be added here -->
+</div>
+
+
+<script> document.querySelectorAll('.movie_poster').forEach(function(moviePoster) {
+    moviePoster.addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('movie-info').style.display = 'block';
+    });
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('movie-info').style.display = 'none';
+});
+
+document.getElementById('overlay').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('movie-info').style.display = 'none';
+});
+ </script>
 <script src="js/movies.js"></script>
 
 
