@@ -87,7 +87,7 @@ function setTVShows (){// function to make request to api to change tv shows
 }
 
 function processShows(images) {//function to put data from api into tv shows
-	var display = document.getElementsByClassName("image");
+	var display = document.getElementsByClassName("images");
 	var names = document.getElementsByClassName("TVtitle");
 	var rating = document.getElementsByClassName("TVrating");
 	
@@ -135,7 +135,7 @@ function setMovies (){// function to make request to api to change tv shows
 }
 
 function processMovies(images) {//function to put data from api into tv shows
-	var display = document.getElementsByClassName("images");
+	var display = document.getElementsByClassName("image");
 	var names = document.getElementsByClassName("MOtitle");
 	var rating = document.getElementsByClassName("MOrating");
 	
