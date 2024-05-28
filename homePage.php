@@ -412,8 +412,8 @@
 		<!-- TV show sections ends -->
 
 
-			<br>
-			<br>
+			<!--<br>
+			<br>-->
 
 			<!-- movie section starts -->
 			<section id="spec" class="p_3 bg_dark">
