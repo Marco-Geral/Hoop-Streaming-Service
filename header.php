@@ -7,7 +7,6 @@
 	<title>HOOP</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" >
 	<link href="css/font-awesome.min.css" rel="stylesheet" >
-<<<<<<< HEAD
 	<link href="css/global.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
@@ -15,7 +14,6 @@
 
 </head>
 <body>
-=======
 	<link href="css/header.css" rel="stylesheet">
 	<!--<link href="css/global.css" rel="stylesheet">-->
 	<!--<link href="css/index.css" rel="stylesheet">-->
@@ -24,7 +22,6 @@
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
 </head>
 <header>
->>>>>>> a3855ff92c0e5ea433be3dce39bdafee225842a4
 <div class="main_1 clearfix position-absolute top-0 w-100">
 <section id="header">
 	<nav class="navbar navbar-expand-md navbar-light" id="navbar_sticky">
@@ -71,13 +68,9 @@
 			</li>
           </ul>
         </li>
-<<<<<<< HEAD
 
 		<!-- search ends -->
-
-=======
 	<!-- search ends -->
->>>>>>> a3855ff92c0e5ea433be3dce39bdafee225842a4
 
 		<!-- profileButton starts -->
 		<li class="nav-item">
@@ -110,9 +103,6 @@ function myFunction() {
   }
 }
 </script>
-<<<<<<< HEAD
 </body>
-=======
 </header>
->>>>>>> a3855ff92c0e5ea433be3dce39bdafee225842a4
 </html> 
