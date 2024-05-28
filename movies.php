@@ -13,11 +13,11 @@
 
 <!-- filter begins -->
 <div id="buttons">
-		<button class="button-value"> Action </button>
-		<button class="button-value"> Comedy </button>
-		<button class="button-value"> Romance </button>
-		<button class="button-value"> Sci-fi </button>
-		<button class="button-value"> Horror </button>
+		<button class="button-value" onclick="getAction()"> Action </button>
+		<button class="button-value" onclick="getComedy()"> Comedy </button>
+		<button class="button-value" onclick="getRomance()"> Romance </button>
+		<button class="button-value" onclick="getSciFi()"> Sci-fi </button>
+		<button class="button-value" onclick="getHorror()"> Horror </button>
 </div>
 
 

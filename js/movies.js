@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function setOriginals (){// function to make request to api to display hoop originals
+	show();
 	var req = new XMLHttpRequest();
 	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
 	var images = [];
@@ -102,6 +103,7 @@ function processOriginals(images) {
 }
 
 function setRecommended (){// function to make request to api to display recommended movies
+	show();
 	var req = new XMLHttpRequest();
 	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
 	var images = [];
@@ -156,6 +158,7 @@ function processRecommended(images) {
 }
 
 function setRated (){// function to make request to api to display top rated movies
+	show();
 	var req = new XMLHttpRequest();
 	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
 	var images = [];
@@ -210,6 +213,7 @@ function processRated(images) {
 }
 
 function setAction (){// function to make request to api to display action movies
+	show();
 	var req = new XMLHttpRequest();
 	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
 	var images = [];
@@ -265,6 +269,7 @@ function processAction(images) {
 }
 
 function setComedy (){// function to make request to api to display comedy movies
+	show();
 	var req = new XMLHttpRequest();
 	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
 	var images = [];
@@ -320,6 +325,7 @@ function processComedy(images) {
 }
 
 function setRomance (){// function to make request to api to display romance movies
+	show();
 	var req = new XMLHttpRequest();
 	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
 	var images = [];
@@ -364,6 +370,7 @@ function processRomance(images) {
     if (divs.length === 0) return;  // check if there are no elements with the class "romance"
     
     var div = divs[0];  // get the first element in the collection
+    div.style.display = 'flex';
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
@@ -375,6 +382,7 @@ function processRomance(images) {
 }
 
 function setSciFi (){// function to make request to api to display sci-fi movies
+	show();
 	var req = new XMLHttpRequest();
 	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
 	var images = [];
@@ -430,6 +438,7 @@ function processSciFi(images) {
 }
 
 function setHorror (){// function to make request to api to display horror movies
+	show();
 	var req = new XMLHttpRequest();
 	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
 	var images = [];
@@ -474,6 +483,7 @@ function processHorror(images) {
     if (divs.length === 0) return;  // check if there are no elements with the class "horror"
     
     var div = divs[0];  // get the first element in the collection
+    div.style.display = "flex";
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
@@ -482,6 +492,489 @@ function processHorror(images) {
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
+}
+
+function show(){
+	var hide = document.getElementsByClassName("row_title");
+	for(var i = 0; i < hide.length; i++)
+		hide[i].style.display ='block';
+		
+	document.getElementsByClassName("recommended")[0].style.display = 'flex';
+	document.getElementsByClassName("topRated")[0].style.display = 'flex';
+	document.getElementsByClassName("action")[0].style.display = 'flex';
+	document.getElementsByClassName("comedy")[0].style.display = 'flex';
+	document.getElementsByClassName("romance")[0].style.display = 'flex';
+	document.getElementsByClassName("scifi")[0].style.display = 'flex';
+	document.getElementsByClassName("horror")[0].style.display ='flex';
+}
+var actions = false;
+var comedy = false;
+
+function getAction() {
+	var req = new XMLHttpRequest();
+	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
+	var images = [];
+	
+	req.onreadystatechange = function () {
+    if (req.readyState == 4) {
+        if (req.status == 200) {
+            if (req.responseText) {
+                try {
+                    images = JSON.parse(req.responseText);
+                    actionFilter(images);
+                } catch (error) {
+                    console.error("Error parsing JSON:", error);
+                }
+            } else {
+                console.error("Empty response from server");
+            }
+        } else {
+            console.error("Error:", req.status);
+        }
+    }
+};
+
+    var load = JSON.stringify({
+  		"action":"GetAllShows",
+  		"limit":15,
+  		"return":"*",
+  		"filter":{
+    		"genre_type": "Action",
+    		"type": "Movie"
+  		}
+	});
+    var basicAuth = btoa("u23584565:2023Tukkies2023");
+    req.setRequestHeader("Authorization", "Basic " + basicAuth);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(load);// send request	
+}
+
+function actionFilter (images) {
+	actions = !actions;
+	
+	if(actions){
+		
+	
+	var divs = document.getElementsByClassName("originals");
+	document.getElementsByClassName("recommended")[0].style.display = 'none';
+	document.getElementsByClassName("topRated")[0].style.display = 'none';
+	document.getElementsByClassName("action")[0].style.display = 'none';
+	document.getElementsByClassName("comedy")[0].style.display = 'none';
+	document.getElementsByClassName("romance")[0].style.display = 'none';
+	document.getElementsByClassName("scifi")[0].style.display = 'none';
+	document.getElementsByClassName("horror")[0].style.display ='none';
+	
+	var hide = document.getElementsByClassName("row_title");
+	for(var i = 0; i < hide.length; i++)
+		hide[i].style.display ='none';
+	
+    if (divs.length === 0) return;  // check if there are no elements with the class "horror"
+    
+    var div = divs[0];  // get the first element in the collection
+    div.innerHTML = '';
+    
+    for (var i = 0; i < images.data.length; i++) {
+        var img = document.createElement("img");
+        img.src = images.data[i].imgURL;
+        img.classList.add("movie_poster");
+        div.appendChild(img);
+    }
+    } else {
+        setOriginals();
+        setRecommended();
+        setRated();
+        setAction();
+        setComedy();
+        setRomance();
+        setSciFi();
+        setHorror();
+	}
+}
+
+function getComedy() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
+  var images = [];
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4) {
+      if (req.status == 200) {
+        if (req.responseText) {
+          try {
+            images = JSON.parse(req.responseText);
+            comedyFilter(images);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
+        } else {
+          console.error("Empty response from server");
+        }
+      } else {
+        console.error("Error:", req.status);
+      }
+    }
+  };
+
+  var load = JSON.stringify({
+    "action": "GetAllShows",
+    "limit": 15,
+    "return": "*",
+    "filter": {
+      "genre_type": "Comedy",
+      "type": "Movie"
+    }
+  });
+  var basicAuth = btoa("u23584565:2023Tukkies2023");
+  req.setRequestHeader("Authorization", "Basic " + basicAuth);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(load);// send request
+}
+
+function comedyFilter(images) {
+  comedy = !comedy;
+
+  if (comedy) {
+	var divs = document.getElementsByClassName("originals");
+	document.getElementsByClassName("recommended")[0].style.display = 'none';
+	document.getElementsByClassName("topRated")[0].style.display = 'none';
+	document.getElementsByClassName("action")[0].style.display = 'none';
+	document.getElementsByClassName("comedy")[0].style.display = 'none';
+	document.getElementsByClassName("romance")[0].style.display = 'none';
+	document.getElementsByClassName("scifi")[0].style.display = 'none';
+	document.getElementsByClassName("horror")[0].style.display ='none';
+
+    var hide = document.getElementsByClassName("row_title");
+    for (var i = 0; i < hide.length; i++)
+      hide[i].style.display = 'none';
+
+    if (divs.length === 0) return;  // check if there are no elements with the class "horror"
+
+    var div = divs[0];  // get the first element in the collection
+    div.innerHTML = '';
+
+    for (var i = 0; i < images.data.length; i++) {
+      var img = document.createElement("img");
+      img.src = images.data[i].imgURL;
+      img.classList.add("movie_poster");
+      div.appendChild(img);
+    }
+  } else {
+	setAction();
+    setOriginals();
+    setRecommended();
+    setRated();
+    setComedy(); 
+    setRomance();
+    setSciFi();
+    setHorror();
+  }
+}
+
+function getRomance() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
+  var images = [];
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4) {
+      if (req.status == 200) {
+        if (req.responseText) {
+          try {
+            images = JSON.parse(req.responseText);
+            romanceFilter(images);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
+        } else {
+          console.error("Empty response from server");
+        }
+      } else {
+        console.error("Error:", req.status);
+      }
+    }
+  };
+
+  var load = JSON.stringify({
+    "action": "GetAllShows",
+    "limit": 15,
+    "return": "*",
+    "filter": {
+      "genre_type": "Romance",
+      "type": "Movie"
+    }
+  });
+  var basicAuth = btoa("u23584565:2023Tukkies2023");
+  req.setRequestHeader("Authorization", "Basic " + basicAuth);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(load);// send request
+}
+var romances = false;
+function romanceFilter(images) {
+ 	romances = !romances;
+
+  if (romances) {
+	var divs = document.getElementsByClassName("originals");
+	document.getElementsByClassName("recommended")[0].style.display = 'none';
+	document.getElementsByClassName("topRated")[0].style.display = 'none';
+	document.getElementsByClassName("action")[0].style.display = 'none';
+	document.getElementsByClassName("comedy")[0].style.display = 'none';
+	document.getElementsByClassName("romance")[0].style.display = 'none';
+	document.getElementsByClassName("scifi")[0].style.display = 'none';
+	document.getElementsByClassName("horror")[0].style.display ='none';
+
+    var hide = document.getElementsByClassName("row_title");
+    for (var i = 0; i < hide.length; i++)
+      hide[i].style.display = 'none';
+
+    if (divs.length === 0) return;  // check if there are no elements with the class "horror"
+
+    var div = divs[0];  // get the first element in the collection
+    div.innerHTML = '';
+
+    for (var i = 0; i < images.data.length; i++) {
+      var img = document.createElement("img");
+      img.src = images.data[i].imgURL;
+      img.classList.add("movie_poster");
+      div.appendChild(img);
+    }
+  } else {
+	setOriginals();
+	setRecommended();
+	setRated();
+	setAction();
+	setComedy();
+	setRomance();
+	setSciFi();
+	setHorror();
+  }
+}
+
+function getSciFi() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
+  var images = [];
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4) {
+      if (req.status == 200) {
+        if (req.responseText) {
+          try {
+            images = JSON.parse(req.responseText);
+            scifiFilter(images);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
+        } else {
+          console.error("Empty response from server");
+        }
+      } else {
+        console.error("Error:", req.status);
+      }
+    }
+  };
+
+  var load = JSON.stringify({
+    "action": "GetAllShows",
+    "limit": 15,
+    "return": "*",
+    "filter": {
+      "genre_type": "Science Fiction",
+      "type": "Movie"
+    }
+  });
+  var basicAuth = btoa("u23584565:2023Tukkies2023");
+  req.setRequestHeader("Authorization", "Basic " + basicAuth);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(load);// send request
+}
+
+var scifi = false;
+function scifiFilter(images) {
+  scifi = !scifi;
+
+  if (scifi) {
+	var divs = document.getElementsByClassName("originals");
+	document.getElementsByClassName("recommended")[0].style.display = 'none';
+	document.getElementsByClassName("topRated")[0].style.display = 'none';
+	document.getElementsByClassName("action")[0].style.display = 'none';
+	document.getElementsByClassName("comedy")[0].style.display = 'none';
+	document.getElementsByClassName("romance")[0].style.display = 'none';
+	document.getElementsByClassName("scifi")[0].style.display = 'none';
+	document.getElementsByClassName("horror")[0].style.display ='none';
+
+    var hide = document.getElementsByClassName("row_title");
+    for (var i = 0; i < hide.length; i++)
+      hide[i].style.display = 'none';
+
+    if (divs.length === 0) return;  // check if there are no elements with the class "horror"
+
+    var div = divs[0];  // get the first element in the collection
+    div.innerHTML = '';
+
+    for (var i = 0; i < images.data.length; i++) {
+      var img = document.createElement("img");
+      img.src = images.data[i].imgURL;
+      img.classList.add("movie_poster");
+      div.appendChild(img);
+    }
+  } else {
+	setOriginals();
+	setRecommended();
+	setRated();
+	setAction();
+	setComedy();
+	setRomance();
+	setSciFi();
+	setHorror();
+  }
+}
+
+function search() {
+  searched = document.getElementById("search").value;
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
+  var images = [];
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4) {
+      if (req.status == 200) {
+        if (req.responseText) {
+          try {
+            images = JSON.parse(req.responseText);
+            processSearch(images);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
+        } else {
+          console.error("Empty response from server");
+        }
+      } else {
+        console.error("Error:", req.status);
+      }
+    }
+  };
+
+  var load = JSON.stringify({
+    "action": "GetAllShows",
+    "limit": 15,
+    "return": "*",
+    "search":{
+    "title": searched
+  	},
+  	"sort":"title"
+  });
+  var basicAuth = btoa("u23584565:2023Tukkies2023");
+  req.setRequestHeader("Authorization", "Basic " + basicAuth);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(load);// send request
+}
+
+function processSearch(images) {
+	
+	var divs = document.getElementsByClassName("originals");
+	document.getElementsByClassName("recommended")[0].style.display = 'none';
+	document.getElementsByClassName("topRated")[0].style.display = 'none';
+	document.getElementsByClassName("action")[0].style.display = 'none';
+	document.getElementsByClassName("comedy")[0].style.display = 'none';
+	document.getElementsByClassName("romance")[0].style.display = 'none';
+	document.getElementsByClassName("scifi")[0].style.display = 'none';
+	document.getElementsByClassName("horror")[0].style.display ='none';
+
+    var hide = document.getElementsByClassName("row_title");
+    for (var i = 0; i < hide.length; i++)
+      hide[i].style.display = 'none';
+
+    if (divs.length === 0) return;  // check if there are no elements with the class "horror"
+
+    var div = divs[0];  // get the first element in the collection
+    div.innerHTML = '';
+
+    for (var i = 0; i < images.data.length; i++) {
+      var img = document.createElement("img");
+      img.src = images.data[i].imgURL;
+      img.classList.add("movie_poster");
+      div.appendChild(img);
+    }
+ } 
+
+function getHorror() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
+  var images = [];
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4) {
+      if (req.status == 200) {
+        if (req.responseText) {
+          try {
+            images = JSON.parse(req.responseText);
+            horrorFilter(images);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
+        } else {
+          console.error("Empty response from server");
+        }
+      } else {
+        console.error("Error:", req.status);
+      }
+    }
+  };
+
+  var load = JSON.stringify({
+    "action": "GetAllShows",
+    "limit": 15,
+    "return": "*",
+    "filter": {
+      "genre_type": "Horror",
+      "type": "Movie"
+    }
+  });
+  var basicAuth = btoa("u23584565:2023Tukkies2023");
+  req.setRequestHeader("Authorization", "Basic " + basicAuth);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(load);// send request
+}
+
+var horror = false;
+function horrorFilter(images) {
+  horror = !horror;
+
+  if (horror) {
+	var divs = document.getElementsByClassName("originals");
+	document.getElementsByClassName("recommended")[0].style.display = 'none';
+	document.getElementsByClassName("topRated")[0].style.display = 'none';
+	document.getElementsByClassName("action")[0].style.display = 'none';
+	document.getElementsByClassName("comedy")[0].style.display = 'none';
+	document.getElementsByClassName("romance")[0].style.display = 'none';
+	document.getElementsByClassName("scifi")[0].style.display = 'none';
+	document.getElementsByClassName("horror")[0].style.display ='none';
+
+    var hide = document.getElementsByClassName("row_title");
+    for (var i = 0; i < hide.length; i++)
+      hide[i].style.display = 'none';
+
+    if (divs.length === 0) return;  // check if there are no elements with the class "horror"
+
+    var div = divs[0];  // get the first element in the collection
+    div.innerHTML = '';
+
+    for (var i = 0; i < images.data.length; i++) {
+      var img = document.createElement("img");
+      img.src = images.data[i].imgURL;
+      img.classList.add("movie_poster");
+      div.appendChild(img);
+    }
+  } else {
+    setOriginals();
+	setRecommended();
+	setRated();
+	setAction();
+	setComedy();
+	setRomance();
+	setSciFi();
+	setHorror();
+  }
 }
 
 
