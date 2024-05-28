@@ -1,0 +1,88 @@
+@font-face{
+    font-family: myFont;
+    src:url("../fonts/arista_pro_semibold.ttf");
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;   
+}
+
+body{
+    font-family: myFont;
+    background-image:linear-gradient(153deg, rgb(0, 0, 0) 10%, rgba(255,49,49,1) 20%, rgb(27, 4, 4) 50%);
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; 
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;    
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+    display: flex;
+    justify-content: center; /* Centers children horizontally */ /* Centers children vertically */ /* Adjust as needed */
+    margin-top: 130px;
+    
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.forms-container {
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: calc(33.333% - 40px);
+}
+
+.form h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.form-submit-button {
+    background: red; /* Background color */
+    color: white; /* Text color */
+    border-style: outset; /* Border style */
+    border-color: white; /* Border color */
+    height: 50px; /* Height of the button */
+    width: 100px; /* Width of the button */
+    font: bold 15px arial, sans-serif; /* Font properties */
+    text-shadow: none; /* Removes text shadow */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border-radius: 5px;
+}
+
+.form-submit-button:hover {
+    background: #eb5757; /* Hover background color */
+    color: #fff; /* Hover text color */
+    border: 1px solid #eee; /* Hover border style */
+    /*border-radius: 20px; Rounded corners */
+    box-shadow: 5px 5px 5px #eee; /* Box shadow on hover */
+    text-shadow: none; /* Removes text shadow on hover */
+}
+
+/*.general_container{
+    margin-top: 100px;
+    
+}
+
+ Additional styles for form inputs, labels, etc., can be added here */
