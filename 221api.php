@@ -442,15 +442,8 @@ class API {
         // Check if the show exists in the content table
         $sql = "SELECT id FROM content WHERE title = ?";
         $stmt = $this->db->querySingleValue($sql, $title);
-        $row = $this->db->fetch($stmt);
-        //because this fetch function only returns the first row of a query result that might have multiple rows,
-        //there is a chance we update the wrong content if there are multiple shows with the same name 
-
-        if (!$row) {
-            return $this->errorResponse("Content not found", 500);
-        }
-
-        $contentID = $row['contentID']; //is contentID in content?
+        $result = $stmt->get_result();
+        $contentID = $result->fetch_assoc()['id'];
 
         // Prepare the update statement
         $sql = "UPDATE content SET ";
