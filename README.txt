@@ -63,7 +63,19 @@ This call is for Admin ONLY and allows them to DELETE a show from the database:
 }
 
 *** FOR UPDATE SHOW ***
-//under construction
+Update show checks if fields are full and if they are, then it updates the db. The only required fields are action and title
+{
+    "action":"UpdateShow",
+    "title":"Rising Sun",
+    "director":"Some guy",
+    "rating":3,
+    "description":"Cool movie about something",
+    "release_date":"2015-05-05",
+    "studio":"Warner Brothers",
+    "genre_type":"Comedy",
+    "actor_name":"ELIJAH WOOD",
+    "review":"pretty cool"
+}
 
 *** FOR ADD REVIEW ***
 This function allows a user to add a review to any show. The contentID part is the id of that specific show (It should be returned by the getShow function)
