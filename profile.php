@@ -222,8 +222,8 @@
 			</section>
 
             
-			<br>
-			<br>
+			<!--<br>
+			<br>-->
 
 			<!-- continue section starts -->
 			<section id="spec" class="p_3 bg_dark">
