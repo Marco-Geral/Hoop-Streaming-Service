@@ -66,18 +66,24 @@ class Database
         }
 
         $result = $this->insertMovieContent($data);
+        if(isset($result['null values']))
+        {
+            return;
+        }
+        if(!$result) {
+            http_response_code(500); // Internal Server Error
+            header('Content-Type: application/json');
+            die(json_encode(["status" => "error", "message" => "Failed to insert movie content"]));
+        }
+
         $reviews = $result['reviews'];
-        $contentID = $result['contetntID'];
+        $contentID = $result['contentID'];
         $actors = $result['actors'];
         $genres = $result['genres'];
 
         $this->insertReviews($contentID, $reviews);
-
-        $actorsResponse = $this->insertActors($actors, $contentID);//call the insertAssociated with function in this function
-        $genresResponse = $this->insertGenres($genres, $contentID);//call the insertAssociated with function in this function
-
-
-        
+        $this->insertActors($actors, $contentID);//call the insertAssociated with function in this function
+        $this->insertGenres($genres, $contentID);//call the insertAssociated with function in this function
  
         $timestamp = microtime(true) * 1000; 
         $response = [
@@ -86,8 +92,8 @@ class Database
                     "message" => "Movie data was successfully loaded"
         ];
         return json_encode($response);
-
 }
+
 public function loadShowData($data)//change functions to work for shows
 {
     if(!$data || !isset($data))
@@ -98,31 +104,35 @@ public function loadShowData($data)//change functions to work for shows
     }
 
     $result = $this->insertShowContent($data);
-
+    if(isset($result['null values']))
+    {
+        return;
+    }
+    if (!$result) {
+        http_response_code(500); // Internal Server Error
+        header('Content-Type: application/json');
+        die(json_encode(["status" => "error", "message" => "Failed to insert movie content"]));
+    }
 
     $reviews = $result['reviews'];
-    $contentID = $result['contetntID'];
+    $contentID = $result['contentID'];
     $actors = $result['actors'];
     $genres = $result['genres'];
 
     $this->insertReviews($contentID, $reviews);
-
-    $actorsResponse = $this->insertActors($actors, $contentID);//call the insertAssociated with function in this function
-    $genresResponse = $this->insertGenres($genres, $contentID);//call the insertAssociated with function in this function
-
-
-    
+    $this->insertActors($actors, $contentID);//call the insertAssociated with function in this function
+    $this->insertGenres($genres, $contentID);//call the insertAssociated with function in this function
 
     $timestamp = microtime(true) * 1000; 
     $response = [
                 "status" => "success",
                 "timestamp" => $timestamp,
-                "message" => "Show data was successfully loaded"
+                "message" => "Movie data was successfully loaded"
     ];
     return json_encode($response);
 }
 
-    private function insertMovieContent($data)//this works fine in theory
+    private function insertMovieContent($data)
     {
         $contentID = $this->generateUniqueId();
 
@@ -137,15 +147,13 @@ public function loadShowData($data)//change functions to work for shows
         // Prepare statement 
             $stmt = $this->mysqli->prepare($sql);
             if(!$stmt){
-                header('Content-Type: application/json');
-                //echo json_encode($data);
-                die(json_encode(["status" => "error", "message" => "Prepare failed: " . htmlspecialchars($this->mysqli->error)]));
+                return false;
             };
         
         // Extracting relevant fields
             $title = isset($data['original_title']) ? $data['original_title'] : "Title not found"; 
-            $description = isset($data['overview']) ? $data['overview'] : "Description not found";
-            $DBrating = isset($data['popularity']) ? $data['popularity'] : 101; //if not set give it a value of 4
+            $description = isset($data['overview']) ? $data['overview'] : "In a world of unexpected challenges, a group of diverse individuals must navigate personal struggles and complex relationships. As they face unpredictable events, they discover the strength within themselves and the power of unity to overcome their greatest obstacles.";
+            $DBrating = isset($data['popularity']) ? $data['popularity'] : 101;
             //get relevant rating
             if($DBrating < 20)
             {
@@ -167,13 +175,24 @@ public function loadShowData($data)//change functions to work for shows
             {
                 $rating = 5;
             }
-            $imgUrl = isset($data['poster_path']) ? $data['poster_path'] : "https://uploads.dailydot.com/2023/12/crying-cat-meme.jpg?q=65&auto=format&w=800&ar=2:1&fit=crop";
-            $studio = isset($data['production_companies'][0]['name']) ? $data['production_companies'][0]['name'] : ""; // Finds first production company (studio)
+            if(!isset($data['poster_path']))
+            {
+                $response = [
+                    'null values' => true
+                ];
+                return $response;
+            }
+            $imgUrl = $data['poster_path'];
+            $studio = isset($data['production_companies'][0]['name']) ? $data['production_companies'][0]['name'] : "";
+            if (strlen($studio) > 50) {
+                $studio = substr($studio, 0, 50);
+            }
+            // Finds first production company (studio)
             $release_date = isset($data['release_date']) ? $data['release_date'] : "1999-07-24";
         
         
         // Extracting the name of the director
-        $director = "";
+        $director = "James Cameron";  
         if(isset($data['credits']) && isset($data['credits']['cast'])) {
             $directors = array_filter($data['credits']['cast'], function($v) {
                 return $v['known_for_department'] === 'Directing';
@@ -201,7 +220,6 @@ public function loadShowData($data)//change functions to work for shows
             // Set default genres if 'genres' is not set or empty
             $genres = ['Action', 'Comedy', 'Adventure'];
         }
-        
         
         // Extract 3 actors
         if(isset($data['credits']['cast'])) {
@@ -233,11 +251,6 @@ public function loadShowData($data)//change functions to work for shows
                 }
             }
         }
-        // If reviews are not available or not in the expected format, provide default reviews
-        // if (empty($reviews)) {
-        //     $reviews[] = "This film offers an engaging story with compelling characters and stunning visuals. The direction is solid, and the performances are commendable. While it may not break new ground, it provides an enjoyable and entertaining experience for audiences of all ages.";
-        //     $reviews[] = "Alright, so I just caught this movie, and let me tell you, it's a total blast! You've got action, drama, and some seriously funny moments. The cast really brings it, and the visuals are pretty darn impressive. It's not gonna blow your mind, but it's definitely a fun ride worth checking out for a good time.";
-        // }
 
         //error checking before insertion:
             if (!isset($actors)) {
@@ -275,13 +288,13 @@ public function loadShowData($data)//change functions to work for shows
                     'actors' =>$actors,
                     'genres' => $genres,
                     'reviews' => $reviews,
-                    'contetntID' => $contentID
+                    'contentID' => $contentID
                 ];
                 return $response;
             }
     }
 
-    private function insertShowContent($data)//this works fine in theory
+    private function insertShowContent($data)
     {
         $contentID = $this->generateUniqueId();
 
@@ -294,16 +307,14 @@ public function loadShowData($data)//change functions to work for shows
         //echo json_encode($data);
 
         // Prepare statement 
-            $stmt = $this->mysqli->prepare($sql);
-            if(!$stmt){
-                header('Content-Type: application/json');
-                //echo json_encode($data);
-                die(json_encode(["status" => "error", "message" => "Prepare failed: " . htmlspecialchars($this->mysqli->error)]));
-            };
+        $stmt = $this->mysqli->prepare($sql);
+        if(!$stmt){
+            return false;
+        };
         
         // Extracting relevant fields
             $title = isset($data['name']) ? $data['name'] : "Title not found"; 
-            $description = isset($data['overview']) ? $data['overview'] : "Description not found";
+            $description = isset($data['overview']) ? $data['overview'] : "In a world of unexpected challenges, a group of diverse individuals must navigate personal struggles and complex relationships. As they face unpredictable events, they discover the strength within themselves and the power of unity to overcome their greatest obstacles.";
             $DBrating = isset($data['popularity']) ? $data['popularity'] : 101; //if not set give it a value of 4
             //get relevant rating
             if($DBrating < 20)
@@ -326,10 +337,22 @@ public function loadShowData($data)//change functions to work for shows
             {
                 $rating = 5;
             }
-            $imgUrl = isset($data['poster_path']) ? $data['poster_path'] : "https://uploads.dailydot.com/2023/12/crying-cat-meme.jpg?q=65&auto=format&w=800&ar=2:1&fit=crop";
-            $studio = isset($data['production_companies'][0]['name']) ? $data['production_companies'][0]['name'] : ""; // Finds first production company (studio)
+            if(!isset($data['poster_path']))
+            {
+                $response = [
+                    'null values' => true
+                ];
+                return $response;
+            }
+            $imgUrl = $data['poster_path'];
+            $studio = isset($data['production_companies'][0]['name']) ? $data['production_companies'][0]['name'] : "";
+            if (strlen($studio) > 50) {
+                $studio = substr($studio, 0, 50);
+            }
+             // Finds first production company (studio)
             $release_date = isset($data['first_air_date']) ? $data['first_air_date'] : "1999-07-24";
-            $director = isset($data['created_by'][0]['original_name']) ? $data['created_by'][0]['original_name'] : "Martin Scorsese";
+            //$director = "Alan Taylor";
+            $director = isset($data['created_by'][0]['original_name']) ? $data['created_by'][0]['original_name'] : "John Patterson";
         
 
         //extract 3 genres
@@ -365,7 +388,6 @@ public function loadShowData($data)//change functions to work for shows
 
         //extract reviews
         $reviews = [];
-
         if (isset($data['reviews']['results']) && is_array($data['reviews']['results']) && !empty($data['reviews']['results'])) {
             // Loop through the results
             foreach ($data['reviews']['results'] as $result) {
@@ -375,19 +397,11 @@ public function loadShowData($data)//change functions to work for shows
                     if (strlen($content) > 250) {
                         $content = substr($content, 0, 250);
                     }
-                    // Add the trimmed or original content to the array
                     $reviews[] = $content;
                 }
             }
         }
         
-        // If reviews are not available or not in the expected format, provide default reviews
-        // if (empty($reviews)) {
-        //     $reviews[] = "This film offers an engaging story with compelling characters and stunning visuals. The direction is solid, and the performances are commendable. While it may not break new ground, it provides an enjoyable and entertaining experience for audiences of all ages.";
-        //     $reviews[] = "Alright, so I just caught this movie, and let me tell you, it's a total blast! You've got action, drama, and some seriously funny moments. The cast really brings it, and the visuals are pretty darn impressive. It's not gonna blow your mind, but it's definitely a fun ride worth checking out for a good time.";
-        // }
-        
-
         //error checking before insertion:
             if (!isset($actors)) {
                 $errorMessage = 'actors';
@@ -405,7 +419,7 @@ public function loadShowData($data)//change functions to work for shows
             }
         
         
-        // Print the extracted data
+        // Print the extracted data -> debugging
         //echo "Genres: " . implode(', ', $genres) . "\n";
         //echo "Actors: " . implode(', ', $actors) . "\n";
 
@@ -423,26 +437,22 @@ public function loadShowData($data)//change functions to work for shows
                     'actors' =>$actors,
                     'genres' => $genres,
                     'reviews' => $reviews,
-                    'contetntID' => $contentID
+                    'contentID' => $contentID
                 ];
                 return $response;
             }
     }
-
 
     private function insertReviews($contentID, $reviews)
     {
         // Prepare the insert statement
         $stmt = $this->mysqli->prepare("INSERT INTO reviews (contentID, review) VALUES (?, ?)");
         if (!$stmt) {
-            return "Error: Failed to prepare statement: " . $this->mysqli->error;
+            echo "Error: Failed to prepare statement: " . $this->mysqli->error;
+            return false;
         }
     
         // Check for errors in binding parameters
-        $stmt->bind_param("is", $contentID, $review);
-        if ($stmt->errno) {
-            return "Error: Failed to bind parameters: " . $stmt->error;
-        }
     
         // If $reviews is not an array, convert it to an array
         if (!is_array($reviews)) {
@@ -451,20 +461,20 @@ public function loadShowData($data)//change functions to work for shows
     
         // Insert each review
         foreach ($reviews as $review) {
-            // Execute the statement for each review
-            $result = $stmt->execute();
-    
-            // Check for errors in executing the statement
-            if (!$result) {
-                return "Error: Failed to execute statement: " . $stmt->error;
+            $stmt->bind_param("is", $contentID, $review);
+            if ($stmt->errno) {
+                echo "Error: Failed to bind parameters: " . $stmt->error;
+                return false;
+            }
+            if (!$stmt->execute()) {
+                echo "Error: Failed to execute statement: " . $stmt->error;
+                return false;
             }
         }
     
-        // Close the prepared statement
         $stmt->close();
-    
-        // Return success message
-        return "Reviews inserted successfully.";
+        echo "Reviews inserted successfully.";
+        return true;
     }
     
 
@@ -482,40 +492,26 @@ private function insertGenres($genres, $contentID)
         return "Error: Failed to prepare statement: " . $this->mysqli->error;
     }
 
-    // Bind parameter
-    $stmt->bind_param("s", $genre_type);
 
-    // Check for errors in binding parameters
-    if ($stmt->errno) {
-        return "Error: Failed to bind parameters: " . $stmt->error;
-    }
-
-    // Insert each genre and retrieve the genreID
     foreach ($genres as $genre) {
         $genre_type = $genre;
-
-        // Execute the statement to insert the genre
-        $result = $stmt->execute();
-
-        // Check for errors in executing the statement
-        if (!$result) {
+        $stmt->bind_param("s", $genre_type);
+        if ($stmt->errno) {
+            return "Error: Failed to bind parameters: " . $stmt->error;
+        }
+        if (!$stmt->execute()) {
             return "Error: Failed to execute statement: " . $stmt->error;
         }
 
-        // Retrieve the auto-generated ID for the inserted genre
         $genreID = $stmt->insert_id;
-
-        // Call the function to insert into genreAssociatedWith table
         $result = $this->insertGenreAssociatedWith($genreID, $contentID);
-
-        // Check for errors in inserting into genreAssociatedWith table
         if ($result !== true) {
-            return $result; // Return the error message
+            return $result;
         }
     }
 
-    // Close the statement
     $stmt->close();
+    return true;
 }
 
 private function insertActors($actors, $contentID)
@@ -533,68 +529,51 @@ private function insertActors($actors, $contentID)
     }
 
     // Bind parameter
-    $stmt->bind_param("s", $actor_name);
-
-    // Check for errors in binding parameters
-    if ($stmt->errno) {
-        return "Error: Failed to bind parameters: " . $stmt->error;
-    }
 
     // Insert each actor and retrieve the actorID
     foreach ($actors as $actor) {
-        // Set the actor name
         $actor_name = $actor;
-
-        // Execute the statement to insert the actor
-        $result = $stmt->execute();
-
-        // Check for errors in executing the statement
-        if (!$result) {
+        $stmt->bind_param("s", $actor_name);
+        if ($stmt->errno) {
+            return "Error: Failed to bind parameters: " . $stmt->error;
+        }
+        if (!$stmt->execute()) {
             return "Error: Failed to execute statement: " . $stmt->error;
         }
 
-        // Retrieve the auto-generated ID for the inserted actor
         $actorID = $stmt->insert_id;
-
-        // Call the function to insert into actorsAssociatedWith table
         $result = $this->insertActorsAssociatedWith($actorID, $contentID);
-
-        // Check for errors in inserting into actorsAssociatedWith table
         if ($result !== true) {
-            return $result; // Return the error message
+            return $result;
         }
     }
 
-    // Close the statement
     $stmt->close();
+    return true;
 }
 
 public function insertActorsAssociatedWith($actorID, $contentID)
 {
     $stmt = $this->mysqli->prepare("INSERT INTO actorsAssociatedWith (actorID, contentID) VALUES (?, ?)");
 
-    // Check for errors in preparing the statement
     if (!$stmt) {
-        return "Error: Failed to prepare statement: " . $this->mysqli->error;
+        echo "Error: Failed to prepare statement: " . $this->mysqli->error;
     }
 
     // Bind parameters
     $stmt->bind_param("ii", $actorID, $contentID);
-
-    // Check for errors in binding parameters
     if ($stmt->errno) {
-        return "Error: Failed to bind parameters: " . $stmt->error;
+        echo "Error: Failed to bind parameters: " . $stmt->error;
     }
 
     // Execute the statement to insert into actorAssociatedWith
     $result = $stmt->execute();
 
     // Check for errors in executing the statement
-    if (!$result) {
+    if (!$stmt->execute()) {
         return "Error: Failed to execute statement: " . $stmt->error;
     }
 
-    // Close the statement
     $stmt->close();
     return true;
 }
@@ -605,23 +584,19 @@ public function insertGenreAssociatedWith($genreID, $contentID)
 
     // Check for errors in preparing the statement
     if (!$stmt) {
-        return "Error: Failed to prepare statement: " . $this->mysqli->error;
+        echo "Error: Failed to prepare statement: " . $this->mysqli->error;
     }
 
     // Bind parameters
     $stmt->bind_param("ii", $genreID, $contentID);
-
-    // Check for errors in binding parameters
     if ($stmt->errno) {
-        return "Error: Failed to bind parameters: " . $stmt->error;
+        echo "Error: Failed to bind parameters: " . $stmt->error;
     }
 
     // Execute the statement to insert into genreAssociatedWith
     $result = $stmt->execute();
-
-    // Check for errors in executing the statement
     if (!$result) {
-        return "Error: Failed to execute statement: " . $stmt->error;
+        echo "Error: Failed to execute statement: " . $stmt->error;
     }
 
     // Close the statement
@@ -629,9 +604,20 @@ public function insertGenreAssociatedWith($genreID, $contentID)
     return true;
 }
 
-    private function generateUniqueId($length = 10) {
-        return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    //Function to generate a unique ID for database insertion
+    private function generateUniqueId($length = 11) {
+        // Maximum value for a signed INT
+        $maxValue = 2147483647;
+        
+        // Generate a random integer within the specified range
+        $randomInteger = random_int(0, $maxValue);
+    
+        // Convert the random integer to a string
+        $randomIntegerString = str_pad($randomInteger, $length, '0', STR_PAD_LEFT);
+    
+        return $randomIntegerString;
     }
+    
 
     private function isIdExists($id, $table, $column) {
         try {
