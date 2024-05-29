@@ -79,7 +79,8 @@ function setRated (){// function to make request to api to display top rated mov
   		"limit":15,
   		"return":"*",
   		"filter":{
-    		"rating": 5
+    		"rating": 5,
+    		"type": "Show"
   		}
 	});
     var basicAuth = btoa("u23584565:2023Tukkies2023");
@@ -97,7 +98,7 @@ function processRated(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -153,7 +154,7 @@ function processAction(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -209,7 +210,7 @@ function processComedy(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -266,7 +267,7 @@ function processRomance(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -322,7 +323,7 @@ function processSciFi(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -379,7 +380,7 @@ function processHorror(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -462,7 +463,7 @@ function actionFilter (images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -537,7 +538,7 @@ function comedyFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
@@ -612,7 +613,7 @@ function romanceFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
@@ -688,7 +689,7 @@ function scifiFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
@@ -785,7 +786,7 @@ function processSearch(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
@@ -853,7 +854,7 @@ function horrorFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);

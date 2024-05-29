@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,11 +10,11 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
     <script src="js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <link href="css/header.css" rel="stylesheet">
     <header>
         <div class="main_1 clearfix position-absolute top-0 w-100">
             <section id="header">
@@ -35,6 +36,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="tvshows.php">TV Shows</a>
+                                </li>
+                                <li class="nav-item" id="admin-link" style="display:none;">
+                                    <a class="nav-link" href="admin.php">Admin</a>
                                 </li>
                             </ul>
                             <ul class="navbar-nav mb-0 ms-auto">
@@ -65,20 +69,28 @@
             </section>
         </div>
         <script>
-            window.onscroll = function() {myFunction()};
-            var navbar_sticky = document.getElementById("navbar_sticky");
-            var sticky = navbar_sticky.offsetTop;
-            var navbar_height = document.querySelector('.navbar').offsetHeight;
-            function myFunction() {
-                if (window.pageYOffset >= sticky + navbar_height) {
-                    navbar_sticky.classList.add("sticky");
-                    document.body.style.paddingTop = navbar_height + 'px';
-                } else {
-                    navbar_sticky.classList.remove("sticky");
-                    document.body.style.paddingTop = '0';
-                }
-            }
+            // Store the username in localStorage
+
             document.addEventListener("DOMContentLoaded", function() {
+                var storedUsername = localStorage.getItem('username');
+                if (storedUsername === "sommy@emekpo.com") {
+                    document.getElementById('admin-link').style.display = 'block';
+                }
+
+                window.onscroll = function() {myFunction()};
+                var navbar_sticky = document.getElementById("navbar_sticky");
+                var sticky = navbar_sticky.offsetTop;
+                var navbar_height = document.querySelector('.navbar').offsetHeight;
+                function myFunction() {
+                    if (window.pageYOffset >= sticky + navbar_height) {
+                        navbar_sticky.classList.add("sticky");
+                        document.body.style.paddingTop = navbar_height + 'px';
+                    } else {
+                        navbar_sticky.classList.remove("sticky");
+                        document.body.style.paddingTop = '0';
+                    }
+                }
+
                 var currentPage = window.location.pathname.split("/").pop();
                 var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
                 navLinks.forEach(function(link) {

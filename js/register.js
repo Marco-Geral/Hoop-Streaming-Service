@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		
 		signup(nameValue,surnameValue,emailValue,passwordValue, phoneValue);//begin sign up process
+		localStorage.setItem('username', emailValue);
 });
 
 function signup(name, surname, email, password, phone){

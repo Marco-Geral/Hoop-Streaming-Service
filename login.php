@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
@@ -35,7 +36,7 @@
                </div> -->
             </div>
             <div class="field">
-               <input type="submit" value="Login" id = "submit">
+               <input type="submit" value="Login" id = "submit" onclick="log()">
             </div>
             <div class="signup-link">
                Not a member? <a href="register.php">Signup now</a>

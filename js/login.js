@@ -1,7 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const submit = document.getElementById('submit');
-
-    submit.addEventListener('click', function() { // Add an event listener to the submit button to start process of logging in
+function log(){
         var email = document.getElementById("login-email");
         var password = document.getElementById("login-password");
         var emailValue = email.value;
@@ -16,9 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Please enter a password"); // Validate user input
             return;
         }
-
+		
         login(emailValue, passwordValue); // Log user in
-    });
+        localStorage.setItem('username', emailValue);
+    }
 
     function login(email, password) {
         var req = new XMLHttpRequest();
@@ -53,5 +51,4 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             alert(info.data); // Display error message if incorrect credentials provided.
         }
-    }
-});
+ }

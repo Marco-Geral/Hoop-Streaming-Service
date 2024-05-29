@@ -95,7 +95,7 @@ function processOriginals(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -132,7 +132,8 @@ function setRecommended (){// function to make request to api to display recomme
   		"limit":15,
   		"return":"*",
   		"filter":{
-    		"rating": 5
+    		"rating": 5,
+    		"type": "Movie"
   		}
 	});
     var basicAuth = btoa("u23584565:2023Tukkies2023");
@@ -150,7 +151,7 @@ function processRecommended(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -187,7 +188,8 @@ function setRated (){// function to make request to api to display top rated mov
   		"limit":15,
   		"return":"*",
   		"filter":{
-    		"rating": 5
+    		"rating": 5,
+    		"type": "Movie"
   		}
 	});
     var basicAuth = btoa("u23584565:2023Tukkies2023");
@@ -205,7 +207,7 @@ function processRated(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -261,7 +263,7 @@ function processAction(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -317,7 +319,7 @@ function processComedy(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -374,7 +376,7 @@ function processRomance(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -430,7 +432,7 @@ function processSciFi(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -487,7 +489,7 @@ function processHorror(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -574,7 +576,7 @@ function actionFilter (images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img");
+        var img = document.createElement("img").dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -653,7 +655,7 @@ function comedyFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
@@ -732,7 +734,7 @@ function romanceFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
@@ -812,7 +814,7 @@ function scifiFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
@@ -829,25 +831,36 @@ function scifiFilter(images) {
   }
 }
 
-//function to display the view page
 document.addEventListener("DOMContentLoaded", function() {
-document.querySelectorAll('.movie_poster').forEach(function(moviePoster) {
-    moviePoster.addEventListener('click', function() {
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('movie-info').style.display = 'block';
+    // Convert HTMLCollection to an array for movie posters
+    var moviePosters = Array.from(document.getElementsByClassName('movie_poster'));
+
+    // Add click event listener to each movie poster
+    moviePosters.forEach(function(moviePoster) {
+        moviePoster.addEventListener('click', function() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('movie-info').style.display = 'block';
+        });
+    });
+
+    // Get all elements with class 'close' and convert to array
+    var closeButtons = Array.from(document.getElementsByClassName('close'));
+
+    // Add click event listener to each close button
+    closeButtons.forEach(function(closeButton) {
+        closeButton.addEventListener('click', function() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('movie-info').style.display = 'none';
+        });
+    });
+
+    // Add click event listener to overlay to close it
+    document.getElementById('overlay').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('movie-info').style.display = 'none';
     });
 });
 
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('movie-info').style.display = 'none';
-});
-
-document.getElementById('overlay').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('movie-info').style.display = 'none';
-});
-});
 
 function search() {
   searched = document.getElementById("searchInput").value;
@@ -913,7 +926,7 @@ function processSearch(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
@@ -983,7 +996,7 @@ function horrorFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
+      var img = document.createElement("img").dataset.contentID = images.data[i].id;
       img.src = images.data[i].imgURL;
       img.classList.add("movie_poster");
       div.appendChild(img);
