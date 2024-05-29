@@ -57,3 +57,6 @@ I added a "continue watching" list as well. This can be random movies.
 Retrieving movies/ tv shows, their respective titles and rating
 We also need a description for the "new releases " carousel HOWEVER, if the descriptions from the api are too long, then we don't need to include the description in the carousel
 
+
+
+The final research has been uploaded. Please review it and let me know if you are satisfied with it.
