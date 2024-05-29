@@ -239,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <li>Actor 1</li>
         <li>Actor 2</li>
     </ul>
+    <button class="favorites_button"> Add to Favorites </button>
     <!--<div class="info-poster-container">
     <div class="info-content">
          Informational content goes here 
