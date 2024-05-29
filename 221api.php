@@ -63,6 +63,8 @@ class API {
                 return $this->addToFavourites($requestBody);
             } elseif(isset($requestBody['action']) && $requestBody['action'] === 'DeleteFavourites') {
                 return $this->deleteFromFavourites($requestBody);
+            } elseif(isset($requestBody['action']) && $requestBody['action'] === 'GetFavourites') {
+                return $this->getFavourites($requestBody);
             }
             return $this->errorResponse('Invalid request', 400);
         }
@@ -836,6 +838,36 @@ class API {
             return $this->errorResponseRequest('An error occurred while deleting from favourites.', 500);
         }
     }
+//------------------------------------------------------------------------------------------------------------------------
+
+
+
+//------------------------------------------------ GET FAVOURITES ---------------------------------------------------------------
+function getFavourites($requestBody) {
+    $action = $requestBody['action'];
+    $customerId = $requestBody['customerID'];
+
+    if ($action !== "GetFavourites") {
+        return json_encode(['success' => false, 'message' => 'Invalid action']);
+    }
+
+    $retrieveContent = "SELECT contentID FROM profile_favourites WHERE profileID = ?";
+    $stmt = $this->db->querySingleValueFav($retrieveContent, $customerId);
+    $result = $stmt->get_result();
+
+
+    if (!$result) {
+        return json_encode(['success' => false, 'message' => 'Failed to retrieve favorites']);
+    }
+
+    $resultArray = [];
+    while ($row = $result->fetch_assoc()) {
+        $resultArray[] = $row['contentID'];
+    }
+
+    return json_encode(['success' => true, 'favorites' => $resultArray]);
+}
+
 //------------------------------------------------------------------------------------------------------------------------
 
 }
