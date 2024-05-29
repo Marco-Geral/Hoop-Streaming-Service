@@ -1,0 +1,6 @@
+Task 2: ER diagram
+We assumed that the online streaming platform would have two types of users: a customer and an admin.
+In the first draft of the EER diagram, we simulated a general online streaming platform, therefore we assumed that the customers could subscribe to our platform and make payments. So, we added a “Payment” and “Subscription” entity. However, upon further inspection of the assignment and guidance from the tutor, we removed those entities as the streaming site is free.
+We assumed that all the information regarding the movies and TV Shows such as the description, rating, director, etc could be included in a single entity “Content” and that it was unnecessary to treat them as separate entities. However, we found it necessary to separate actors and genre entities based on the assumption that viewers might want to search or filter by actors or genre.
+We assumed viewers might want to download movies and TV Shows, so we included a “downloads” attribute in the “Profile” entity. However, we also removed it in our final EER diagram.
+
