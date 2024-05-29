@@ -14,8 +14,9 @@ function log(){
             return;
         }
 		
+		localStorage.setItem('username', emailValue);
         login(emailValue, passwordValue); // Log user in
-        localStorage.setItem('username', emailValue);
+        
     }
 
     function login(email, password) {
@@ -48,6 +49,10 @@ function log(){
     function processInfo(info) {
         if (info.status === "success") {
             window.location.href = "profile.php"; // Open page if user credentials correct
+            localStorage.setItem("phone", info.data.phone);
+            localStorage.setItem("Name", info.data.F_name + ' ' + info.data.L_Name);
+            localStorage.setItem("isAdmin", info.data.isAdmin);
+            localStorage.setItem("ID", info.data.id);
         } else {
             alert(info.data); // Display error message if incorrect credentials provided.
         }

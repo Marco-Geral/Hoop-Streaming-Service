@@ -95,8 +95,9 @@ function processOriginals(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -151,7 +152,9 @@ function processRecommended(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
+        img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.src = images.data[i].imgURL;
         img.classList.add("movie_poster");
         div.appendChild(img);
@@ -207,8 +210,9 @@ function processRated(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
-        img.src = images.data[i].imgURL;
+       var img = document.createElement("img");
+       img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -263,8 +267,9 @@ function processAction(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -319,8 +324,9 @@ function processComedy(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -376,8 +382,9 @@ function processRomance(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -432,8 +439,9 @@ function processSciFi(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -489,8 +497,9 @@ function processHorror(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -576,8 +585,9 @@ function actionFilter (images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -655,8 +665,9 @@ function comedyFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
+      var img = document.createElement("img");
       img.src = images.data[i].imgURL;
+      img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
@@ -734,8 +745,9 @@ function romanceFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
+      var img = document.createElement("img");
       img.src = images.data[i].imgURL;
+      img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
@@ -814,8 +826,9 @@ function scifiFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
+      var img = document.createElement("img");
       img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
@@ -926,8 +939,9 @@ function processSearch(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
-      img.src = images.data[i].imgURL;
+     var img = document.createElement("img");
+     img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
@@ -996,8 +1010,9 @@ function horrorFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
+      var img = document.createElement("img");
       img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
