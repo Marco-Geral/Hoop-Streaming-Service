@@ -138,24 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Play button or any other controls can be added here -->
 </div>
 
-
-<script> document.querySelectorAll('.movie_poster').forEach(function(moviePoster) {
-    moviePoster.addEventListener('click', function() {
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('movie-info').style.display = 'block';
-    });
-});
-
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('movie-info').style.display = 'none';
-});
-
-document.getElementById('overlay').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('movie-info').style.display = 'none';
-});
- </script>
 <script src="js/movies.js"></script>
 
 

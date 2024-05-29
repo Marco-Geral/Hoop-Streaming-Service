@@ -146,6 +146,32 @@ function processMovies(images) {//function to put data from api into tv shows
 	}
 
 }
+
+function processSearch(images) {
+	
+	var divs = document.getElementsByClassName("topRated");
+	document.getElementsByClassName("action")[0].style.display = 'none';
+	document.getElementsByClassName("comedy")[0].style.display = 'none';
+	document.getElementsByClassName("romance")[0].style.display = 'none';
+	document.getElementsByClassName("scifi")[0].style.display = 'none';
+	document.getElementsByClassName("horror")[0].style.display ='none';
+
+    var hide = document.getElementsByClassName("row_title");
+    for (var i = 0; i < hide.length; i++)
+      hide[i].style.display = 'none';
+
+    if (divs.length === 0) return;  // check if there are no elements with the class "horror"
+
+    var div = divs[0];  // get the first element in the collection
+    div.innerHTML = '';
+
+    for (var i = 0; i < images.data.length; i++) {
+      var img = document.createElement("img");
+      img.src = images.data[i].imgURL;
+      img.classList.add("movie_poster");
+      div.appendChild(img);
+    }
+ } 
 window.onload = function() {
     setCarousel();
     setTVShows();

@@ -47,7 +47,7 @@
                                             <div class="input-group p-2">
                                                 <input id="searchInput" type="text" class="form-control border-0" placeholder="Search Here">
                                                 <span class="input-group-btn">
-                                                    <button class="btn btn-primary bg-transparent border-0 fs-5" type="button" onclick="search()" id="search">
+                                                    <button class="btn btn-primary bg-transparent border-0 fs-5" type="button" onclick="search()">
                                                         <i class="fa fa-search col_red"></i>
                                                     </button>
                                                 </span>
@@ -86,6 +86,14 @@
                         link.classList.add("active");
                     }
                 });
+
+                // Hide search button on home page
+                if (currentPage === "homePage.php") {
+                    var searchButton = document.querySelector(".dropdown_search");
+                    if (searchButton) {
+                        searchButton.style.display = "none";
+                    }
+                }
             });
         </script>
     </header>

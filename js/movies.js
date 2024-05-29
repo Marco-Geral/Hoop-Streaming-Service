@@ -829,8 +829,28 @@ function scifiFilter(images) {
   }
 }
 
+//function to display the view page
+document.addEventListener("DOMContentLoaded", function() {
+document.querySelectorAll('.movie_poster').forEach(function(moviePoster) {
+    moviePoster.addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('movie-info').style.display = 'block';
+    });
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('movie-info').style.display = 'none';
+});
+
+document.getElementById('overlay').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('movie-info').style.display = 'none';
+});
+});
+
 function search() {
-  searched = document.getElementById("search").value;
+  searched = document.getElementById("searchInput").value;
   var req = new XMLHttpRequest();
   req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
   var images = [];
@@ -861,6 +881,9 @@ function search() {
     "search":{
     "title": searched
   	},
+  	"filter": {
+      "type": "Movie"
+    },
   	"sort":"title"
   });
   var basicAuth = btoa("u23584565:2023Tukkies2023");
