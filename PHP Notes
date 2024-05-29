@@ -1,0 +1,26 @@
+
+
+To Saber and Marco for the PHP:
+
+1. Login page:
+Email address
+Password
+Remember me checkbox ( I suppose we don't need to implement this, but if there's time at the end, it would be cool)
+
+2. Register page:
+Name
+Surname
+Email
+Phone number
+Password
+
+3. Profile page:
+user name, phone number, phone number to put in their bio and allow user to edit their bio
+user favourites
+I added a "continue watching" list as well. This can be random movies.
+I removed the "continue watching" list as
+
+4. Home page:
+Retrieving movies/ tv shows, their respective titles and rating
+We also need a description for the "new releases " carousel HOWEVER, if the descriptions from the api are too long, then we don't need to include the description in the carousel
+
