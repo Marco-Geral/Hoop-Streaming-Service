@@ -102,6 +102,9 @@ function processRated(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(this.dataset.contentID); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -159,6 +162,9 @@ function processAction(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(this.dataset.contentID); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -216,6 +222,9 @@ function processComedy(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(this.dataset.contentID); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -274,6 +283,9 @@ function processRomance(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(this.dataset.contentID); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -331,6 +343,9 @@ function processSciFi(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(this.dataset.contentID); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -389,6 +404,9 @@ function processHorror(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(this.dataset.contentID); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -891,4 +909,29 @@ window.onload = function () {
 	setRomance();
 	setSciFi();
 	setHorror();
+}
+
+/*---------View Page-----------*/
+
+
+function showModal(contentID) {
+  // Check if the modal exists before showing it
+  var modal = document.getElementById('viewMovieModal');
+  if (!modal) return;
+
+  // Populate the modal with dummy data based on contentID
+  document.getElementById('viewMovieTitle').textContent = 'Title Placeholder'; // Ensure this ID exists
+  document.getElementById('viewMovieDescription').textContent = 'Description Placeholder'; // Ensure this ID exists
+  document.getElementById('viewMovieRating').textContent = 'Rating: 5'; // Ensure this ID exists
+  document.getElementById('viewMovieDate').textContent = 'Release Date: 2024-05-29'; // Ensure this ID exists
+  document.getElementById('viewMovieActors').innerHTML = '<ul><li>Actor 1</li><li>Actor 2</li></ul>'; // Ensure this ID exists
+  document.getElementById('viewMoviePoster').src = ''; // Set the poster image URL here
+
+  // Show the modal
+  modal.style.display = 'block';
+}
+
+// Function to close the modal
+document.getElementById('closeViewMovie').onclick = function() {
+  document.getElementById('viewMovieModal').style.display = 'none';
 }

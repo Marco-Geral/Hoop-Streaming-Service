@@ -161,6 +161,25 @@
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
 </div>
+
+<!-- Modal -->
+<div id="viewMovieModal" class="modal">
+  <div id="viewMovieContent" class="modal-content">
+    <span id="closeViewMovie">&times;</span>
+    <h2 id="viewMovieTitle">Title Placeholder</h2>
+    <p id="viewMovieDescription">Description Placeholder</p>
+    <p id="viewMovieRating">Rating: 5</p>
+    <p id="viewMovieDate">Release Date: 2024-05-29</p>
+    <ul id="viewMovieActors">
+      <li>Actor 1</li>
+      <li>Actor 2</li>
+    </ul>
+    <img id="viewMoviePoster" src="" alt="Movie Poster">
+  </div>
+</div>
+
 <script src="js/shows.js"></script>
+
+
 </body>
 </html>
