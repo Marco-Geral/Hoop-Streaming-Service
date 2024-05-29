@@ -12,11 +12,11 @@
 <body>
 <!-- filter begins -->
 <div id="buttons">
-		<button class="button-value" onclick="getAction()"> Action </button>
+		<button class="button-value" onclick="getAction()"> Action & Adventure </button>
 		<button class="button-value" onclick="getComedy()"> Comedy </button>
-		<button class="button-value" onclick="getRomance()"> Romance </button>
-		<button class="button-value" onclick="getSciFi()"> Sci-fi </button>
-		<button class="button-value" onclick="getHorror()"> Horror </button>
+		<button class="button-value" onclick="getRomance()"> Animation </button>
+		<button class="button-value" onclick="getSciFi()"> Sci-fi & Fantasy </button>
+		<button class="button-value" onclick="getHorror()"> Drama </button>
 </div>
 <!-- filter ends -->
 
@@ -54,7 +54,7 @@
     </div> 
     <!--Trending Now-->
     <div class="row">
-        <h1 class="row_title">HORROR</h1>
+        <h1 class="row_title">DRAMA</h1>
         <div class="row_posters horror">
             <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
@@ -86,7 +86,7 @@
     
     <!--ACTION MOVIES-->
     <div class="row">
-        <h1 class="row_title">ACTION</h1>
+        <h1 class="row_title">ACTION & ADVENTURE</h1>
         <div class="row_posters action">
           <span>  <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" /> </span>
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
@@ -132,7 +132,7 @@
     </div>  
     <!--Romance-->
     <div class="row">
-        <h1 class="row_title">ROMANCE</h1>
+        <h1 class="row_title">ANIMATION</h1>
         <div class="row_posters romance">
             <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
@@ -147,7 +147,7 @@
     </div> 
     <!--Science Fiction-->
     <div class="row">
-        <h1 class="row_title">SCI-FI</h1>
+        <h1 class="row_title">SCI-FI & FANTASY</h1>
         <div class="row_posters scifi">
             <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />

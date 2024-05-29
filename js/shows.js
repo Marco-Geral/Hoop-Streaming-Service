@@ -98,8 +98,9 @@ function processRated(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -135,7 +136,7 @@ function setAction (){// function to make request to api to display action movie
   		"limit":15,
   		"return":"*",
   		"filter":{
-    		"genre_type": "Action",
+    		"genre_type": "Action & Adventure",
     		"type": "Show"
   		}
 	});
@@ -154,8 +155,9 @@ function processAction(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -210,8 +212,9 @@ function processComedy(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -247,7 +250,7 @@ function setRomance (){// function to make request to api to display romance mov
   		"limit":15,
   		"return":"*",
   		"filter":{
-    		"genre_type": "Romance",
+    		"genre_type": "Animation",
     		"type": "Show"
   		}
 	});
@@ -267,8 +270,9 @@ function processRomance(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -304,7 +308,7 @@ function setSciFi (){// function to make request to api to display sci-fi movies
   		"limit":15,
   		"return":"*",
   		"filter":{
-    		"genre_type": "Science Fiction",
+    		"genre_type": "Sci-Fi & Fantasy",
     		"type": "Show"
   		}
 	});
@@ -323,8 +327,9 @@ function processSciFi(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -360,7 +365,7 @@ function setHorror (){// function to make request to api to display horror movie
   		"limit":15,
   		"return":"*",
   		"filter":{
-    		"genre_type": "Horror",
+    		"genre_type": "Drama",
     		"type": "Show"
   		}
 	});
@@ -380,8 +385,9 @@ function processHorror(images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -430,7 +436,7 @@ function getAction() {
   		"limit":15,
   		"return":"*",
   		"filter":{
-    		"genre_type": "Action",
+    		"genre_type": "Action & Adventure",
     		"type": "Show"
   		}
 	});
@@ -463,8 +469,9 @@ function actionFilter (images) {
     div.innerHTML = '';
     
     for (var i = 0; i < images.data.length; i++) {
-        var img = document.createElement("img").dataset.contentID = images.data[i].id;
+        var img = document.createElement("img");
         img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
         div.appendChild(img);
     }
@@ -538,8 +545,9 @@ function comedyFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
+      var img = document.createElement("img");
       img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
@@ -582,7 +590,7 @@ function getRomance() {
     "limit": 15,
     "return": "*",
     "filter": {
-      "genre_type": "Romance",
+      "genre_type": "Animation",
       "type": "Show"
     }
   });
@@ -613,8 +621,9 @@ function romanceFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
+      var img = document.createElement("img");
       img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
@@ -657,7 +666,7 @@ function getSciFi() {
     "limit": 15,
     "return": "*",
     "filter": {
-      "genre_type": "Science Fiction",
+      "genre_type": "Sci-Fi & Fantasy",
       "type": "Show"
     }
   });
@@ -689,8 +698,9 @@ function scifiFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
+      var img = document.createElement("img");
       img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
@@ -703,6 +713,8 @@ function scifiFilter(images) {
 	setHorror();
   }
 }
+
+
 
 //function to display the view page
 /*document.addEventListener("DOMContentLoaded", function() {
@@ -786,8 +798,9 @@ function processSearch(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
-      img.src = images.data[i].imgURL;
+     var img = document.createElement("img");
+     img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
@@ -822,7 +835,7 @@ function getHorror() {
     "limit": 15,
     "return": "*",
     "filter": {
-      "genre_type": "Horror",
+      "genre_type": "Drama",
       "type": "Show"
     }
   });
@@ -854,8 +867,9 @@ function horrorFilter(images) {
     div.innerHTML = '';
 
     for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img").dataset.contentID = images.data[i].id;
+      var img = document.createElement("img");
       img.src = images.data[i].imgURL;
+        img.dataset.contentID = images.data[i].id;
       img.classList.add("movie_poster");
       div.appendChild(img);
     }
