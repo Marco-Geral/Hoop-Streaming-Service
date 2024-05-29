@@ -28,7 +28,7 @@
                         
 </div>
      </div>
-<!--favourites starts -->
+
 <section id="spec" class="p_3 bg_dark">
 			<div class="container-xl">
 			<div class="row stream_1 text-center">
