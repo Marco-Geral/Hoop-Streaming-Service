@@ -127,8 +127,8 @@ class Database {
     }
 
     public function querySingleValueFav($sql, $param) {
-        echo "SQL Query: $sql\n"; // Debugging
-        echo "Parameter: $param\n"; // Debugging
+        //echo "SQL Query: $sql\n"; // Debugging
+       // echo "Parameter: $param\n"; // Debugging
     
         $stmt = $this->mysqli->prepare($sql);
         if ($stmt === false) {
@@ -138,13 +138,13 @@ class Database {
         // Bind the single parameter
         $stmt->bind_param('i', $param); // Assuming the parameter is a string
     
-        echo "Executing query: $sql with parameter: $param\n"; // Debugging
+        //echo "Executing query: $sql with parameter: $param\n"; // Debugging
     
         if (!$stmt->execute()) {
             die("Error in query execution: ". $stmt->error);
         }
     
-        echo "Query executed successfully. Statement object: ". print_r($stmt, true). "\n"; // Debugging
+       // echo "Query executed successfully. Statement object: ". print_r($stmt, true). "\n"; // Debugging
         return $stmt;
     }
     
