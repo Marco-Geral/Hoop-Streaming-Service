@@ -1,7 +1,10 @@
-@font-face{
+/*@font-face{
     font-family: myFont;
     src:url("../fonts/arista_pro_semibold.ttf");
-}
+}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&display=swap');
+
 
 *{
     margin: 0;
@@ -9,7 +12,7 @@
 }
 
 body{
-    font-family: myFont;
+    font-family: 'Vollkorn', serif;
     background-image:linear-gradient(153deg, rgb(0, 0, 0) 10%, rgba(255,49,49,1) 20%, rgb(27, 4, 4) 50%);
 }
 
