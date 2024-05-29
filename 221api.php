@@ -141,7 +141,7 @@ class API {
             // Fetch the result
             $result = $stmt->get_result();
             if ($result->num_rows === 0) {
-                http_response_code(404);
+                http_response_code(404); 
                 return $this->errorResponse('Customer not found');
             }
     
@@ -150,7 +150,7 @@ class API {
             $_SESSION['id'] = $row['id'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['isAdmin'] = $row['isAdmin'];
-            return $this->successResponse(['email' => $row['email']]);
+            return $this->successResponse(['email' => $row['email'], "id" => $row['id'], "F_name" => $row['F_name'], "L_Name" => $row['L_Name'], "isAdmin" => $row['isAdmin'], "phone" => $row['phone']]);
         }
     }
     
@@ -369,15 +369,21 @@ class API {
         $genre_type = $requestBody['genre_type'];
         $actor_names = $requestBody['actor_name'];
         $review = $requestBody['review'];
+        $contentID = $this->generateUniqueId();
+
+        // Check if the ID already exists in the database
+        while ($this->isIdExists($contentID, 'content', 'id')) {
+            $contentID = $this->generateUniqueId();
+        }       
 
         // Start transaction to ensure data integrity
         $this->db->mysqli->begin_transaction();
 
         try {
             // Insert content into the content table
-            $insertContentSql = "INSERT INTO content (type, title, director, rating, description, release_date, studio, imgURL) VALUES (?,?,?,?,?,?,?,?)";
-            $stmt = $this->db->query($insertContentSql, [$type, $title, $director, $rating, $description, $release_date, $studio, $imgURL]);
-            $contentId = $stmt->insert_id; // Get the ID of the newly inserted content
+            $insertContentSql = "INSERT INTO content (id, type, title, director, rating, description, release_date, studio, imgURL) VALUES (?,?,?,?,?,?,?,?,?)";
+            $stmt = $this->db->query($insertContentSql, [$contentID, $type, $title, $director, $rating, $description, $release_date, $studio, $imgURL]);
+            //$contentId = $stmt->insert_id; // Get the ID of the newly inserted content
 
             // Insert genre into the genres table
             $insertGenreSql = "INSERT INTO genre (genre_type) VALUES (?)";
@@ -386,7 +392,7 @@ class API {
 
             // Associate genre with content
             $insertGenreAssocSql = "INSERT INTO genreAssociatedWith (genreID, contentID) VALUES (?,?)";
-            $this->db->query($insertGenreAssocSql, [$genreId, $contentId]);
+            $this->db->query($insertGenreAssocSql, [$genreId, $contentID]);
 
             // Insert actors into the actors table
             foreach ($actor_names as $actorName) {
@@ -396,12 +402,14 @@ class API {
 
                 // Associate actor with content
                 $insertActorAssocSql = "INSERT INTO actorsAssociatedWith (actorID, contentID) VALUES (?,?)";
-                $this->db->query($insertActorAssocSql, [$actorId, $contentId]);
+                $this->db->query($insertActorAssocSql, [$actorId, $contentID]);
             }
 
             // Insert review
-            $insertReviewSql = "INSERT INTO reviews (contentID, review) VALUES (?,?)";
-            $this->db->query($insertReviewSql, [$contentId, $review]);
+            if(isset($review)) {
+                $insertReviewSql = "INSERT INTO reviews (contentID, review) VALUES (?,?)";
+                $this->db->query($insertReviewSql, [$contentID, $review]);
+            }
 
             // Commit the transaction
             $this->db->mysqli->commit();
@@ -413,6 +421,48 @@ class API {
             $this->db->mysqli->rollback();
             // Return error response
             return $this->errorResponseRequest('An error occurred while adding the show.', 500);
+        }
+    }
+
+    public function generateUniqueId($length = 11) {
+        // Maximum value for a signed INT
+        $maxValue = 2147483647;
+        
+        // Generate a random integer within the specified range
+        $randomInteger = random_int(0, $maxValue);
+    
+        // Convert the random integer to a string
+        $randomIntegerString = str_pad($randomInteger, $length, '0', STR_PAD_LEFT);
+    
+        return $randomIntegerString;
+    }
+
+    function isIdExists($id, $table, $column) {
+        try {
+            // Prepare SQL statement
+            $sqlQuery = "SELECT COUNT(*) FROM $table WHERE $column = ?";
+            $stmt = $this->db->mysqli->prepare($sqlQuery);
+            if (!$stmt) {
+                throw new Exception("Prepare statement failed: " . $this->db->mysqli->error);
+            } 
+            // Bind parameter
+            $stmt->bind_param("s", $id); 
+            // Execute statement
+            if (!$stmt->execute()) {
+                throw new Exception("Execution of statement failed: " . $stmt->error);
+            }
+            // Bind result
+            $stmt->bind_result($count);
+            // Fetch result
+            $stmt->fetch();
+            // Close statement
+            $stmt->close();
+            // Return whether the count is greater than 0
+            return $count > 0;
+        } catch (Exception $e) {
+            // Handle exception
+            echo "Error: " . $e->getMessage();
+            return false;
         }
     }
 //------------------------------------------------------------------------------------------------------------------------
