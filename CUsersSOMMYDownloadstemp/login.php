@@ -1,11 +1,9 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
       <title>HOOP</title>
       <link rel="stylesheet" href="css/login.css">
-      <script type="text/javascript" src="js/login.js"></script>
    </head>
    <body>
 
@@ -36,7 +34,7 @@
                </div> -->
             </div>
             <div class="field">
-               <input type="submit" value="Login" id = "submit" onclick="log()">
+               <input type="submit" value="Login" id = "submit">
             </div>
             <div class="signup-link">
                Not a member? <a href="register.php">Signup now</a>
