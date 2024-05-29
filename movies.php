@@ -13,104 +13,32 @@
 
 <!-- filter begins -->
 <div id="buttons">
-		<button class="button-value"> Action </button>
-		<button class="button-value"> Comedy </button>
-		<button class="button-value"> Romance </button>
-		<button class="button-value"> Sci-fi </button>
-		<button class="button-value"> Horror </button>
+		<button class="button-value" onclick="getAction()"> Action </button>
+		<button class="button-value" onclick="getComedy()"> Comedy </button>
+		<button class="button-value" onclick="getRomance()"> Romance </button>
+		<button class="button-value" onclick="getSciFi()"> Sci-fi </button>
+		<button class="button-value" onclick="getHorror()"> Horror </button>
 </div>
 
 
 <div class="row_container">
     <div class="row">
         <h1 class="row_title">HOOP ORIGINALS</h1>
-        <div class="row_posters">
-                <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-                <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
+        <div class="row_posters originals">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
     <!--Trending Now-->
     <div class="row">
-        <h1 class="row_title">TRENDING NOW</h1>
-        <div class="row_posters">
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
+        <h1 class="row_title">RECOMMENDED FOR YOU</h1>
+        <div class="row_posters recommended">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
     <!--TOP RATED-->
     <div class="row">
         <h1 class="row_title">TOP RATED</h1>
-        <div class="row_posters">
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
+        <div class="row_posters topRated">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div>
@@ -118,98 +46,48 @@
     <div class="row">
     <div class="row" data-genre="action">
         <h1 class="row_title">ACTION</h1>
-        <div class="row_posters">
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
+        <div class="row_posters action">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
+   </div>
     <!--COMEDY-->
     <div class="row">
         <div class="row" data-genre="comedy">
         <h1 class="row_title">COMEDY</h1>
-        <div class="row_posters">
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
+        <div class="row_posters comedy">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div>  
+    </div>
     <!--Romance-->
     <div class="row">
         <div class="row" data-genre="romance">
         <h1 class="row_title">ROMANCE</h1>
-        <div class="row_posters">
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
+        <div class="row_posters romance">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
+    </div>
     <!--Science Fiction-->
     <div class="row">
     <div class="row" data-genre="sci-fi">
         <h1 class="row_title">SCI-FI</h1>
-        <div class="row_posters">
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
+        <div class="row_posters  scifi">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
+    </div>
     <!--Horror-->
     <div class="row">
     <div class="row" data-genre="horror">
         <h1 class="row_title">HORROR</h1>
-        <div class="row_posters">
-            <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie4.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie5.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie6.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie7.jpg" alt="movie poster" class="movie_poster" />
-            <img src="img/large-movie8.jpg" alt="movie poster" class="movie_poster" />
+        <div class="row_posters horror">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
+    </div>
+    
     <!--Documentaries-->
 </div>
 <!--<script>
