@@ -24,21 +24,21 @@
 <div class="row_container">
     <div class="row">
         <h1 class="row_title">HOOP ORIGINALS</h1>
-        <div class="row_posters originals">
+        <div class="row_posters originals" style="overflow-x: auto;">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
     <!--Trending Now-->
     <div class="row">
         <h1 class="row_title">RECOMMENDED FOR YOU</h1>
-        <div class="row_posters recommended">
+        <div class="row_posters recommended" style="overflow-x: auto;">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
     <!--TOP RATED-->
     <div class="row">
         <h1 class="row_title">TOP RATED</h1>
-        <div class="row_posters topRated">
+        <div class="row_posters topRated" style="overflow-x: auto;">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div>
@@ -46,7 +46,7 @@
     <div class="row">
     <div class="row" data-genre="action">
         <h1 class="row_title">ACTION</h1>
-        <div class="row_posters action">
+        <div class="row_posters action" style="overflow-x: auto;">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
@@ -55,7 +55,7 @@
     <div class="row">
         <div class="row" data-genre="comedy">
         <h1 class="row_title">COMEDY</h1>
-        <div class="row_posters comedy">
+        <div class="row_posters comedy" style="overflow-x: auto;">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div>  
@@ -64,7 +64,7 @@
     <div class="row">
         <div class="row" data-genre="romance">
         <h1 class="row_title">ROMANCE</h1>
-        <div class="row_posters romance">
+        <div class="row_posters romance" style="overflow-x: auto;">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
@@ -73,7 +73,7 @@
     <div class="row">
     <div class="row" data-genre="sci-fi">
         <h1 class="row_title">SCI-FI</h1>
-        <div class="row_posters  scifi">
+        <div class="row_posters  scifi" style="overflow-x: auto;">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
@@ -82,7 +82,7 @@
     <div class="row">
     <div class="row" data-genre="horror">
         <h1 class="row_title">HORROR</h1>
-        <div class="row_posters horror">
+        <div class="row_posters horror" style="overflow-x: auto;">
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
     </div> 
@@ -105,6 +105,7 @@
       <li>Actor 2</li>
     </ul>
     <img id="viewMoviePoster" src="" alt="Movie Poster">
+    <button id="addToFavoritesButton">Add To Favorites</button>
   </div>
 </div>
 

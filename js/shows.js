@@ -926,6 +926,7 @@ function showModal(contentID) {
   document.getElementById('viewMovieDate').textContent = 'Release Date: 2024-05-29'; // Ensure this ID exists
   document.getElementById('viewMovieActors').innerHTML = '<ul><li>Actor 1</li><li>Actor 2</li></ul>'; // Ensure this ID exists
   document.getElementById('viewMoviePoster').src = ''; // Set the poster image URL here
+  //ADD CODE FOR "Add To Favorites" BUTTON
 
   // Show the modal
   modal.style.display = 'block';

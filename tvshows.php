@@ -24,7 +24,7 @@
 <div class="row_container">
     <div class="row">
         <h1 class="row_title">TRENDING NOW</h1>
-        <div class="row_posters topRated">
+        <div class="row_posters topRated" style="overflow-x: auto;">
                 <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
                 <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
                 <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
@@ -55,7 +55,7 @@
     <!--Trending Now-->
     <div class="row">
         <h1 class="row_title">DRAMA</h1>
-        <div class="row_posters horror">
+        <div class="row_posters horror" style="overflow-x: auto;">
             <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
@@ -87,7 +87,7 @@
     <!--ACTION MOVIES-->
     <div class="row">
         <h1 class="row_title">ACTION & ADVENTURE</h1>
-        <div class="row_posters action">
+        <div class="row_posters action" style="overflow-x: auto;">
           <span>  <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" /> </span>
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
@@ -118,7 +118,7 @@
     <!--COMEDY-->
     <div class="row">
         <h1 class="row_title">COMEDY</h1>
-        <div class="row_posters comedy">
+        <div class="row_posters comedy" style="overflow-x: auto;">
             <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
@@ -133,7 +133,7 @@
     <!--Romance-->
     <div class="row">
         <h1 class="row_title">ANIMATION</h1>
-        <div class="row_posters romance">
+        <div class="row_posters romance" style="overflow-x: auto;">
             <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
@@ -148,7 +148,7 @@
     <!--Science Fiction-->
     <div class="row">
         <h1 class="row_title">SCI-FI & FANTASY</h1>
-        <div class="row_posters scifi">
+        <div class="row_posters scifi" style="overflow-x: auto;">
             <img src="img/large-movie1.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie2.jpg" alt="movie poster" class="movie_poster" />
             <img src="img/large-movie3.jpg" alt="movie poster" class="movie_poster" />
