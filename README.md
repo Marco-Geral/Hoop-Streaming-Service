@@ -60,3 +60,8 @@ We also need a description for the "new releases " carousel HOWEVER, if the desc
 
 
 The final research has been uploaded. Please review it and let me know if you are satisfied with it.
+
+
+Lusanda has volunteered to implement the admin page. Please sure the admin is able to do the following:
+ • Add, edit, and delete Movies and TV series
+ • Manage actors, directors, genres and production studios
