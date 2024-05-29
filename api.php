@@ -44,7 +44,7 @@ class api {
         }
     
         $curl = curl_init(); // Initialize cURL handle outside the loop
-        for ($i = 5000; $i < 10000; $i++) {
+        for ($i = 1; $i < 5000; $i++) {
     //  CURLOPT_URL => "https://api.themoviedb.org/3/tv/6?language=en-US",
 
             curl_setopt_array($curl, [
@@ -96,7 +96,7 @@ class api {
         }
     
         $curl = curl_init(); // Initialize cURL handle outside the loop
-        for ($i = 1; $i < 5000; $i++) {
+        for ($i = 1; $i < 10000; $i++) {
 
             curl_setopt_array($curl, [
                 CURLOPT_URL => "https://api.themoviedb.org/3/tv/" . $i . "?api_key=bfd6b676c3cd3c77cb82b27a90623d80&language=en-US&append_to_response=credits,reviews",
