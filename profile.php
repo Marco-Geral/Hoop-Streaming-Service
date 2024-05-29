@@ -22,7 +22,9 @@
                                 <h6 class="mb-2 custom-heading">John Doe</h6>
                                 <p class="mb-1 custom-paragraph">098 785 2231</p>
                                 <p class="custom-paragraph">johhnyboi@gmail.com</p>
-                                <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3" data-toggle="modal" data-target="#edit-profile-modal" href="#"><i class="icofont-ui-edit"></i> EDIT</a></p>
+								<button id="logout-button" class="logout-button">Logout</button>
+
+                        
 </div>
      </div>
        
@@ -220,6 +222,12 @@
             
 			<br>
 			<br>
+
+			<script>
+    document.getElementById("logout-button").addEventListener("click", function() {
+        window.location.href = "logout.php";
+    });
+</script>
 
 </body>
 </html>
