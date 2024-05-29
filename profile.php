@@ -13,6 +13,7 @@
 	<link href="css/index.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
 	<script src="js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="js/profile.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
@@ -27,8 +28,6 @@
                         
 </div>
      </div>
-       
-
 <!--favourites starts -->
 <section id="spec" class="p_3 bg_dark">
 			<div class="container-xl">
@@ -83,6 +82,7 @@
 					</div>
 					</div>
 					<div class="col-md-3 col-3 p-0">
+                        <!-- ratings -->
 					<div class="spec_1imi1r">
 						<h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">6.1</span></h6>
 					</div>
@@ -213,9 +213,9 @@
 			<div class="row spec_1 mt-4">
 				<div class="col-lg-2 pe-0 col-md-4">
 				<div class="spec_1im clearfix position-relative">
-				
-				
-				
+				</div>
+				</div>
+				</div>
 			</div>
 			</section>
 
