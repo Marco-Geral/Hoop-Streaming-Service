@@ -72,8 +72,8 @@
             // Store the username in localStorage
 
             document.addEventListener("DOMContentLoaded", function() {
-                var storedUsername = localStorage.getItem('isAdmin');
-                if (storedUsername) {
+                var storedUsername = localStorage.getItem('username');
+                if (storedUsername === "sommy@emekpo.com") {
                     document.getElementById('admin-link').style.display = 'block';
                 }
 

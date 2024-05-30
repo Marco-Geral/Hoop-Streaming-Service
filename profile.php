@@ -221,8 +221,8 @@
 			</section>
 
             
-			<br>
-			<br>
+			<!--<br>
+			<br>-->
 
 			<script>
     document.getElementById("logout-button").addEventListener("click", function() {

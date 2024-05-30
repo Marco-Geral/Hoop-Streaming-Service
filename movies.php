@@ -100,7 +100,7 @@
     <p id="viewMovieDescription">Description Placeholder</p>
     <p id="viewMovieRating">Rating: 5</p>
     <p id="viewMovieDate">Release Date: 2024-05-29</p>
-    <ul id="viewMovieActors">
+    <ul id="viewMovieActors" style=display:none>
       <li>Actor 1</li>
       <li>Actor 2</li>
     </ul>

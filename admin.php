@@ -109,7 +109,7 @@
             <input type="text" id="reviews" name="reviews" required>
             
             <br>
-            <input type="file" id="image" accept = image/*>
+            <input type="text" id="image" name="image" required>
 
 			<br>
             <button type="submit" class="form-submit-button" onclick="add()">Add</button>

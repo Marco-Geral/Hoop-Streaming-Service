@@ -160,7 +160,7 @@ function removeFromFavourites(movieId) {
             if (req.status === 200) {
                 if (req.responseText) {
                     try {
-                        var response = JSON.parse(req.responseText);
+                        var response = req.responseText;
                         deleted(response);
                     } catch (error) {
                         console.error("Error parsing JSON:", error);
@@ -175,9 +175,9 @@ function removeFromFavourites(movieId) {
     };
 
     var payload = {
-        action: "DeleteFavourites",
-        customerID: localStorage.getItem("ID"),
-        movieId: movieId // Include movieId in the payload
+        "action": "DeleteFavourites",
+        "customerID": localStorage.getItem("ID"),
+        "contentID": movieId // Include movieId in the payload
     };
 
     var basicAuth = btoa("u23584565:2023Tukkies2023");
@@ -195,12 +195,7 @@ function deleted(response) {
 
 
 function deleted(){
-	if(deleted === 'Array'){
-		console.log("success");
-		getFavourites();
-	} else {
-		console.log('error');
-	}
+	getFavourites();
 }
 
 window.onload = function(){
