@@ -529,7 +529,7 @@ function getComedy() {
 
   var load = JSON.stringify({
     "action": "GetAllShows",
-    "limit": 15,
+    "limit": 100,
     "return": "*",
     "filter": {
       "genre_type": "Comedy",
@@ -605,7 +605,7 @@ function getRomance() {
 
   var load = JSON.stringify({
     "action": "GetAllShows",
-    "limit": 15,
+    "limit": 100,
     "return": "*",
     "filter": {
       "genre_type": "Animation",
@@ -681,7 +681,7 @@ function getSciFi() {
 
   var load = JSON.stringify({
     "action": "GetAllShows",
-    "limit": 15,
+    "limit": 100,
     "return": "*",
     "filter": {
       "genre_type": "Sci-Fi & Fantasy",
@@ -781,7 +781,7 @@ function search() {
 
   var load = JSON.stringify({
     "action": "GetAllShows",
-    "limit": 15,
+    "limit": 100,
     "return": "*",
     "search":{
     "title": searched
@@ -850,7 +850,7 @@ function getHorror() {
 
   var load = JSON.stringify({
     "action": "GetAllShows",
-    "limit": 15,
+    "limit": 100,
     "return": "*",
     "filter": {
       "genre_type": "Drama",
