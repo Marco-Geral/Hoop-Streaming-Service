@@ -47,8 +47,7 @@ function updateShow(params) {
       if (req.status == 200) {
         if (req.responseText) {
           try {
-            images = req.responseText;
-            console.log(images);
+            alert("Content updated.")
           } catch (error) {
             console.error("Error parsing JSON:", error);
           }
@@ -135,8 +134,7 @@ function addShow(params) {
       if (req.status == 200) {
         if (req.responseText) {
           try {
-            images = req.responseText;
-            console.log(images);
+            alert("Content added.");
           } catch (error) {
             console.error("Error parsing JSON:", error);
           }
@@ -186,8 +184,7 @@ function deleteShow(params) {
       if (req.status == 200) {
         if (req.responseText) {
           try {
-            images = req.responseText;
-            console.log(images);
+            alert("Content deleted.");
           } catch (error) {
             console.error("Error parsing JSON:", error);
           }
