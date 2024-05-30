@@ -1,0 +1,214 @@
+/*@font-face{
+    font-family: myFont;
+    src:url("../fonts/arista_pro_semibold.ttf");
+}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&display=swap');
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Vollkorn', serif;
+    background-image:linear-gradient(153deg, rgb(0, 0, 0) 10%, rgba(255,49,49,1) 20%, rgb(27, 4, 4) 50%);
+}
+
+/*.row_container{
+    margin-top: 200px;
+}*/
+
+.row_title{
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 5px
+}
+
+.row{
+    overflow: hidden;
+}
+
+.row_posters{
+    display: flex;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+}
+
+.row{
+    margin-bottom: 25px;
+    position: relative;
+    
+}
+
+.movie_poster{
+    width: 100%;
+    object-fit: contain;
+    max-height: 250px;
+    margin-right: 10px;
+    transition: all 800ms ease-in-out;
+    border-radius: 15px;
+    padding: 0px;
+
+}
+
+.movie_poster:hover{
+    transform: scale(1.1);
+    /*margin: 0 10px;*/
+}
+
+.arrow{
+    font-size: 75px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 150px;
+    left: 1608px;
+    opacity: 0; /* Initially, the icon is invisible */
+    transition: opacity 0.5s ease-in-out; /* This will animate the change in opacity */
+
+}
+
+.arrow:hover {
+    opacity: 0.7; /* When you hover over the icon, it becomes fully visible */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.row_posters::-webkit-scrollbar {
+    display: none;
+}
+
+/* Custom scrollbar styling for Chrome, Safari and Opera */
+.row_posters:hover::-webkit-scrollbar {
+    display: block;
+    width: 12px; /* Adjust the width of the scrollbar */
+}
+
+.row_posters:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.7); /*Semi-transparent white */
+    border-radius: 6px; /* Rounded corners */
+}
+
+
+/* ADMIN ADD MOVIE BUTTON*/
+#addMovieButton {
+    padding: 10px 20px;
+    background-color: #ff7b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addMovieButton:hover {
+    background-color: #be6b13;
+}
+
+#movieForm {
+    margin-top: 20px;
+}
+
+#movieForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+#movieForm input[type="text"]{
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+#movieForm input[type="checkbox"] {
+    margin-bottom: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+#movieForm input[type="submit"] {
+    background-color: #ff7b00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#movieForm input[type="submit"]:hover {
+    background-color: #be6b13;
+}
+/*ADMIN MOVIE BUTTON END*/
+#buttons{
+    margin-top: 160px;
+    margin-bottom: 25px;
+}
+.button-value{
+    border: 2px solid linear-gradient(90deg, rgba(255,0,0,1) 50%, rgba(255,193,193,1) 50%);
+    padding: .7em 1.8em;
+    border-radius: 3em;
+    font-size: larger;
+    background-color: transparent;
+    color: white;
+} 
+
+/*---------View Page----------*/
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-image:linear-gradient(180deg, rgb(0, 0, 0) 25%, rgb(185, 37, 37) 100%);
+    color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #CCC;
+    width: 60%; /* Could be adjusted */
+    font-size: 20px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #addToFavoritesButton {
+    background-color: rgb(185, 37, 37); 
+    border: 1px solid white;
+    border-radius: 9px;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+#addToFavoritesButton:hover {
+    background-color: white; 
+    color: black; 
+}
+
+  
