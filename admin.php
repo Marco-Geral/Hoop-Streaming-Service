@@ -97,12 +97,12 @@
             <input type="text" id="genre_types" name="genre_type" required>
 
             <br>
-            <div id="actors-container">
+            <div id="actors-containeradd">
                 <div class="actor-field">
                     <input type="text" class="input" placeholder="Actor Name" name="actor[]" id="addActor" required>
                 </div>
             </div>
-            <button type="button" onclick="addActorField()">Add Actor</button>
+            <button type="button" onclick="addActorFieldAdd()">Add Actor</button>
 
             <br>
             <label for="review">Review:</label>
@@ -154,6 +154,27 @@ function addActorField() {
     
     // Get the existing actors container
     var actorsContainer = document.getElementById('actors-container');
+    
+    // Append the new div to the actors container
+    actorsContainer.appendChild(newDiv);
+}
+function addActorFieldAdd() {
+    // Create a new div element for each actor
+    var newDiv = document.createElement('div');
+    newDiv.className = 'actor-field';
+    
+    // Create a new input element
+    var newInput = document.createElement('input');
+    newInput.type = 'text';
+    newInput.placeholder = 'Actor Name';
+    newInput.name = 'actors[]';
+    newInput.required = true;
+    
+    // Append the new input to the new div
+    newDiv.appendChild(newInput);
+    
+    // Get the existing actors container
+    var actorsContainer = document.getElementById('actors-containeradd');
     
     // Append the new div to the actors container
     actorsContainer.appendChild(newDiv);

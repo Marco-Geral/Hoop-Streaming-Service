@@ -76,7 +76,7 @@ function setRated (){// function to make request to api to display top rated mov
 
     var load = JSON.stringify({
   		"action":"GetAllShows",
-  		"limit":15,
+  		"limit":100,
   		"return":"*",
   		"filter":{
     		"rating": 5,
@@ -102,6 +102,9 @@ function processRated(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(images.data[i]); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -133,7 +136,7 @@ function setAction (){// function to make request to api to display action movie
 
     var load = JSON.stringify({
   		"action":"GetAllShows",
-  		"limit":15,
+  		"limit":100,
   		"return":"*",
   		"filter":{
     		"genre_type": "Action & Adventure",
@@ -159,6 +162,9 @@ function processAction(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(images.data[i]); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -190,7 +196,7 @@ function setComedy (){// function to make request to api to display comedy movie
 
     var load = JSON.stringify({
   		"action":"GetAllShows",
-  		"limit":15,
+  		"limit":100,
   		"return":"*",
   		"filter":{
     		"genre_type": "Comedy",
@@ -216,6 +222,9 @@ function processComedy(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(images.data[i]); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -247,7 +256,7 @@ function setRomance (){// function to make request to api to display romance mov
 
     var load = JSON.stringify({
   		"action":"GetAllShows",
-  		"limit":15,
+  		"limit":100,
   		"return":"*",
   		"filter":{
     		"genre_type": "Animation",
@@ -274,6 +283,9 @@ function processRomance(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(images.data[i]); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -305,7 +317,7 @@ function setSciFi (){// function to make request to api to display sci-fi movies
 
     var load = JSON.stringify({
   		"action":"GetAllShows",
-  		"limit":15,
+  		"limit":100,
   		"return":"*",
   		"filter":{
     		"genre_type": "Sci-Fi & Fantasy",
@@ -331,6 +343,9 @@ function processSciFi(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(images.data[i]); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -362,7 +377,7 @@ function setHorror (){// function to make request to api to display horror movie
 
     var load = JSON.stringify({
   		"action":"GetAllShows",
-  		"limit":15,
+  		"limit":100,
   		"return":"*",
   		"filter":{
     		"genre_type": "Drama",
@@ -389,6 +404,9 @@ function processHorror(images) {
         img.src = images.data[i].imgURL;
         img.dataset.contentID = images.data[i].id;
         img.classList.add("movie_poster");
+        img.onclick = function() {
+          showModal(images.data[i]); // Pass the content ID to the show function
+        };
         div.appendChild(img);
     }
 }
@@ -433,7 +451,7 @@ function getAction() {
 
     var load = JSON.stringify({
   		"action":"GetAllShows",
-  		"limit":15,
+  		"limit":100,
   		"return":"*",
   		"filter":{
     		"genre_type": "Action & Adventure",
@@ -883,7 +901,6 @@ function horrorFilter(images) {
   }
 }
 
-
 window.onload = function () {
 	setRated();
 	setAction();
@@ -891,4 +908,67 @@ window.onload = function () {
 	setRomance();
 	setSciFi();
 	setHorror();
+}
+
+/*---------View Page-----------*/
+
+
+function showModal(content) {
+  // Check if the modal exists before showing it
+  var modal = document.getElementById('viewMovieModal');
+  if (!modal) return;
+
+  // Populate the modal with content data
+  document.getElementById('viewMoviePoster').src = content.imgURL; // Set the poster image URL
+  document.getElementById('viewMovieTitle').textContent = content.title; // Ensure this ID exists
+  document.getElementById('viewMovieDescription').textContent = content.description; // Ensure this ID exists
+  document.getElementById('viewMovieRating').textContent = 'Rating: ' + content.rating; // Ensure this ID exists
+  document.getElementById('viewMovieDate').textContent = 'Release Date: ' + content.release_date; // Ensure this ID exists
+  document.getElementById('viewMovieActors').innerHTML = content.actor_name; // Ensure this ID exists
+
+  // Assign contentID to a variable accessible in the onclick function
+  var contentID = content.id;
+
+  document.getElementById('addToFavoritesButton').onclick = function() {
+    var req = new XMLHttpRequest();
+    req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true); // make the API request
+
+    req.onreadystatechange = function() {
+      if (req.readyState == 4) {
+        if (req.status == 200) {
+          if (req.responseText) {
+            try {
+              alert("Added to favourites :)");
+            } catch (error) {
+              console.error("Error parsing JSON:", error);
+            }
+          } else {
+            console.error("Empty response from server");
+          }
+        } else {
+          console.error("Error:", req.status);
+        }
+      }
+    };
+
+    var load = JSON.stringify({
+      "action": "AddToFavourites",
+      "contentID": contentID,
+      "customerID": localStorage.getItem("ID")
+    });
+
+    var basicAuth = btoa("u23584565:2023Tukkies2023");
+    req.setRequestHeader("Authorization", "Basic " + basicAuth);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(load); // send request
+  };
+
+  // Show the modal
+  modal.style.display = 'block';
+}
+
+
+// Function to close the modal
+document.getElementById('closeViewMovie').onclick = function() {
+  document.getElementById('viewMovieModal').style.display = 'none';
 }

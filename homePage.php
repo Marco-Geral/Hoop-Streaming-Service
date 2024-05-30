@@ -36,7 +36,7 @@
         <div class="carousel-caption d-md-block">
             <h5 class="text-white-50 release ps-2 fs-6">NEW RELEASES</h5>
             <h1 class="font_80 mt-4 title">The Rise Of <br> The Show</h1>
-            <h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">6.1</span> <span class="col_green">IMDB SCORE</span> <span class="mx-3 year">2022</span> <span class="col_red">Romance, Action</span></h6>
+            <h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">6.1</span> <span class="col_green">IMDB SCORE</span> <span class="mx-3 year">2022</span> <span class="col_red gen">Romance, Action</span></h6>
             <p class="mt-4 des">Certain but she but shyness why cottage. Guy the put instrument sir entreaties affronting.</p>
             <h5 class="mb-0 mt-4 text-uppercase"><a class="button" href="#"> Watch Trailer</a></h5>
         </div>
@@ -46,7 +46,7 @@
         <div class="carousel-caption d-md-block">
             <h5 class="text-white-50 release ps-2 fs-6">NEW RELEASES</h5>
             <h1 class="font_80 mt-4 title">Detail Of Popular<br> New Show</h1>
-            <h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">7.3</span> <span class="col_green">IMDB SCORE</span> <span class="mx-3 year">2022</span> <span class="col_red">Romance, Action</span></h6>
+            <h6 class="text-white"><span class="rating d-inline-block rounded-circle me-2 col_green">7.3</span> <span class="col_green">IMDB SCORE</span> <span class="mx-3 year">2022</span> <span class="col_red gen">Romance, Action</span></h6>
             <p class="mt-4 des">Certain but she but shyness why cottage. Guy the put instrument sir entreaties affronting.</p>
             <h5 class="mb-0 mt-4 text-uppercase"><a class="button" href="#"> Play Movie</a></h5>
         </div>
@@ -107,7 +107,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">Ce Of Entro</a></h5>
 				</div>
@@ -132,7 +132,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">White Panther</a></h5>
 				</div>
@@ -157,7 +157,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">160 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">Coming Soon</a></h5>
 				</div>
@@ -182,7 +182,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">Handmaiden</a></h5>
 				</div>
@@ -207,7 +207,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">The Silence</a></h5>
 				</div>
@@ -232,7 +232,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">Monospaced</a></h5>
 				</div>
@@ -259,7 +259,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">Ce Of Entro</a></h5>
 				</div>
@@ -284,7 +284,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">White Panther</a></h5>
 				</div>
@@ -309,7 +309,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">160 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">Coming Soon</a></h5>
 				</div>
@@ -334,7 +334,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">Handmaiden</a></h5>
 				</div>
@@ -359,7 +359,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">The Silence</a></h5>
 				</div>
@@ -384,7 +384,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red tvgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white TVtitle" href="#">Monospaced</a></h5>
 				</div>
@@ -432,7 +432,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Ce Of Entro</a></h5>
 				</div>
@@ -457,7 +457,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">White Panther</a></h5>
 				</div>
@@ -482,7 +482,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">160 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Coming Soon</a></h5>
 				</div>
@@ -507,7 +507,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Handmaiden</a></h5>
 				</div>
@@ -532,7 +532,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">The Silence</a></h5>
 				</div>
@@ -557,7 +557,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Monospaced</a></h5>
 				</div>
@@ -584,7 +584,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Ce Of Entro</a></h5>
 				</div>
@@ -609,7 +609,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">White Panther</a></h5>
 				</div>
@@ -634,7 +634,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">160 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Coming Soon</a></h5>
 				</div>
@@ -659,7 +659,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Handmaiden</a></h5>
 				</div>
@@ -684,7 +684,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">The Silence</a></h5>
 				</div>
@@ -709,7 +709,7 @@
 				</div>
 				<div class="spec_1im1 clearfix">
 				<h6 class="text-light fw-normal font_14 mt-3">180 min,
-			<span class="col_red">Action</span>
+			<span class="col_red movgen">Action</span>
 			<span class="span_1 pull-right d-inline-block">PG13</span></h6>
 				<h5 class="mb-0 fs-6"><a class="text-white MOtitle" href="#">Monospaced</a></h5>
 				</div>
@@ -722,6 +722,23 @@
 			</div>
 			</div>
 			</section>
+			
+			<!-- Modal -->
+<div id="viewMovieModal" class="modal">
+  <div id="viewMovieContent" class="modal-content">
+    <span id="closeViewMovie">&times;</span>
+    <img id="viewMoviePoster" src="" alt="Movie Poster">
+    <h2 id="viewMovieTitle">Title Placeholder</h2>
+    <p id="viewMovieDescription">Description Placeholder</p>
+    <p id="viewMovieRating">Rating: 5</p>
+    <p id="viewMovieDate">Release Date: 2024-05-29</p>
+    <ul id="viewMovieActors">
+      <li>Actor 1</li>
+      <li>Actor 2</li>
+    </ul>
+    <button id="addToFavoritesButton">Add To Favorites</button>
+  </div>
+</div>
 	<!-- movie section ends -->
 
 

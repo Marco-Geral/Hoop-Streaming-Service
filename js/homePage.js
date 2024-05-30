@@ -1,179 +1,220 @@
-function setCarousel (){// function to make request to api to change image carousel
-	var req = new XMLHttpRequest();
-	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
-	var images = [];
-	
-	req.onreadystatechange = function () {
-    if (req.readyState == 4) {
+function showModal(content) {
+  var modal = document.getElementById('viewMovieModal');
+  if (!modal) return;
+
+  document.getElementById('viewMoviePoster').src = content.imgURL;
+  document.getElementById('viewMovieTitle').textContent = content.title;
+  document.getElementById('viewMovieDescription').textContent = content.description;
+  document.getElementById('viewMovieRating').textContent = 'Rating: ' + content.rating;
+  document.getElementById('viewMovieDate').textContent = 'Release Date: ' + content.release_date;
+  document.getElementById('viewMovieActors').innerHTML = content.actor_name;
+
+  var contentID = content.id;
+
+  document.getElementById('addToFavoritesButton').onclick = function() {
+    var req = new XMLHttpRequest();
+    req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);
+
+    req.onreadystatechange = function() {
+      if (req.readyState == 4) {
         if (req.status == 200) {
-            if (req.responseText) {
-                try {
-                    images = JSON.parse(req.responseText);
-                    processCarousel(images);
-                } catch (error) {
-                    console.error("Error parsing JSON:", error);
-                }
-            } else {
-                console.error("Empty response from server");
+          if (req.responseText) {
+            try {
+              alert("Added to favourites :)");
+            } catch (error) {
+              console.error("Error parsing JSON:", error);
             }
+          } else {
+            console.error("Empty response from server");
+          }
         } else {
-            console.error("Error:", req.status);
+          console.error("Error:", req.status);
         }
-    }
-};
+      }
+    };
 
     var load = JSON.stringify({
-  		"action":"GetAllShows",
-  		"limit":3,
-  		"return":"*"
-	});
+      "action": "AddToFavourites",
+      "contentID": contentID,
+      "customerID": localStorage.getItem("ID")
+    });
+
     var basicAuth = btoa("u23584565:2023Tukkies2023");
     req.setRequestHeader("Authorization", "Basic " + basicAuth);
     req.setRequestHeader("Content-Type", "application/json");
-    req.send(load);// send request
+    req.send(load);
+  };
+
+  modal.style.display = 'block';
 }
 
-function processCarousel(images) {//function to put data from api into image carousel
-	var display = document.getElementsByClassName("d-block w-100");
-	var names = document.getElementsByClassName("title");
-	var descriptions = document.getElementsByClassName("des");
-	var rating = document.getElementsByClassName("rating");
-	var year = document.getElementsByClassName("year");
-	
-	for(var i = 0; i < display.length; i++) {
-   		display[i].src = images.data[i].imgURL;
-   		names[i].innerText = images.data[i].title; 
-   		descriptions[i].innerText = images.data[i].description; 
-   		rating[i].innerHTML = images.data[i].rating;
-   		year[i].innerHTML = images.data[i].release_date;
-	}
+function setCarousel() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);
+  var images = [];
 
-}
-
-function setTVShows (){// function to make request to api to change tv shows
-	var req = new XMLHttpRequest();
-	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
-	var images = [];
-	
-	req.onreadystatechange = function () {
+  req.onreadystatechange = function() {
     if (req.readyState == 4) {
-        if (req.status == 200) {
-            if (req.responseText) {
-                try {
-                    images = JSON.parse(req.responseText);
-                    processShows(images);
-                } catch (error) {
-                    console.error("Error parsing JSON:", error);
-                }
-            } else {
-                console.error("Empty response from server");
-            }
+      if (req.status == 200) {
+        if (req.responseText) {
+          try {
+            images = JSON.parse(req.responseText);
+            processCarousel(images);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
         } else {
-            console.error("Error:", req.status);
+          console.error("Empty response from server");
         }
+      } else {
+        console.error("Error:", req.status);
+      }
     }
-};
+  };
 
-    var load = JSON.stringify({
-  		"action":"GetAllShows",
-  		"limit":12,
-  		"return":"*",
-  		"filter": {"type":"Show"}
-	});
-    var basicAuth = btoa("u23584565:2023Tukkies2023");
-    req.setRequestHeader("Authorization", "Basic " + basicAuth);
-    req.setRequestHeader("Content-Type", "application/json");
-    req.send(load);// send request
+  var load = JSON.stringify({
+    "action": "GetAllShows",
+    "limit": 3,
+    "return": "*"
+  });
+  var basicAuth = btoa("u23584565:2023Tukkies2023");
+  req.setRequestHeader("Authorization", "Basic " + basicAuth);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(load);
 }
 
-function processShows(images) {//function to put data from api into tv shows
-	var display = document.getElementsByClassName("images");
-	var names = document.getElementsByClassName("TVtitle");
-	var rating = document.getElementsByClassName("TVrating");
-	
-	for(var i = 0; i < display.length; i++) {
-   		display[i].src = images.data[i].imgURL;
-   		names[i].innerText = images.data[i].title; 
-   		rating[i].innerHTML = images.data[i].rating;
-	}
+function processCarousel(images) {
+  var display = document.getElementsByClassName("d-block w-100");
+  var names = document.getElementsByClassName("title");
+  var descriptions = document.getElementsByClassName("des");
+  var rating = document.getElementsByClassName("rating");
+  var year = document.getElementsByClassName("year");
+  var genre = document.getElementsByClassName("gen");
 
+  for (var i = 0; i < display.length; i++) {
+    display[i].src = images.data[i].imgURL;
+    names[i].innerText = images.data[i].title;
+    descriptions[i].innerText = images.data[i].description;
+    rating[i].innerHTML = images.data[i].rating;
+    year[i].innerHTML = images.data[i].release_date;
+    genre[i].innerHTML = images.data[i].genres;
+  }
 }
 
-function setMovies (){// function to make request to api to change tv shows
-	var req = new XMLHttpRequest();
-	req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);//make the api request
-	var images = [];
-	
-	req.onreadystatechange = function () {
+function setTVShows() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);
+  var images = [];
+
+  req.onreadystatechange = function() {
     if (req.readyState == 4) {
-        if (req.status == 200) {
-            if (req.responseText) {
-                try {
-                    images = JSON.parse(req.responseText);
-                    processMovies(images);
-                } catch (error) {
-                    console.error("Error parsing JSON:", error);
-                }
-            } else {
-                console.error("Empty response from server");
-            }
+      if (req.status == 200) {
+        if (req.responseText) {
+          try {
+            images = JSON.parse(req.responseText);
+            processShows(images);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
         } else {
-            console.error("Error:", req.status);
+          console.error("Empty response from server");
         }
+      } else {
+        console.error("Error:", req.status);
+      }
     }
-};
+  };
 
-    var load = JSON.stringify({
-  		"action":"GetAllShows",
-  		"limit":12,
-  		"return":"*","filter": {"type":"Movie"}
-	});
-    var basicAuth = btoa("u23584565:2023Tukkies2023");
-    req.setRequestHeader("Authorization", "Basic " + basicAuth);
-    req.setRequestHeader("Content-Type", "application/json");
-    req.send(load);// send request
+  var load = JSON.stringify({
+    "action": "GetAllShows",
+    "limit": 12,
+    "return": "*",
+    "filter": { "type": "Show" }
+  });
+  var basicAuth = btoa("u23584565:2023Tukkies2023");
+  req.setRequestHeader("Authorization", "Basic " + basicAuth);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(load);
 }
 
-function processMovies(images) {//function to put data from api into tv shows
-	var display = document.getElementsByClassName("image");
-	var names = document.getElementsByClassName("MOtitle");
-	var rating = document.getElementsByClassName("MOrating");
-	
-	for(var i = 0; i < display.length; i++) {
-   		display[i].src = images.data[i].imgURL;
-   		names[i].innerText = images.data[i].title; 
-   		rating[i].innerHTML = images.data[i].rating;
-	}
+function processShows(images) {
+  var display = document.getElementsByClassName("images");
+  var names = document.getElementsByClassName("TVtitle");
+  var rating = document.getElementsByClassName("TVrating");
+  var genre = document.getElementsByClassName("tvgen");
 
+  for (var i = 0; i < display.length; i++) {
+    display[i].src = images.data[i].imgURL;
+    names[i].innerText = images.data[i].title;
+    rating[i].innerHTML = images.data[i].rating;
+    genre[i].innerHTML = images.data[i].genres;
+
+    display[i].onclick = (function(imageData) {
+      return function() {
+        showModal(imageData);
+      };
+    })(images.data[i]);
+  }
 }
 
-function processSearch(images) {
-	
-	var divs = document.getElementsByClassName("topRated");
-	document.getElementsByClassName("action")[0].style.display = 'none';
-	document.getElementsByClassName("comedy")[0].style.display = 'none';
-	document.getElementsByClassName("romance")[0].style.display = 'none';
-	document.getElementsByClassName("scifi")[0].style.display = 'none';
-	document.getElementsByClassName("horror")[0].style.display ='none';
+function setMovies() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);
+  var images = [];
 
-    var hide = document.getElementsByClassName("row_title");
-    for (var i = 0; i < hide.length; i++)
-      hide[i].style.display = 'none';
-
-    if (divs.length === 0) return;  // check if there are no elements with the class "horror"
-
-    var div = divs[0];  // get the first element in the collection
-    div.innerHTML = '';
-
-    for (var i = 0; i < images.data.length; i++) {
-      var img = document.createElement("img");
-      img.src = images.data[i].imgURL;
-      img.classList.add("movie_poster");
-      div.appendChild(img);
+  req.onreadystatechange = function() {
+    if (req.readyState == 4) {
+      if (req.status == 200) {
+        if (req.responseText) {
+          try {
+            images = JSON.parse(req.responseText);
+            processMovies(images);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
+        } else {
+          console.error("Empty response from server");
+        }
+      } else {
+        console.error("Error:", req.status);
+      }
     }
- } 
+  };
+
+  var load = JSON.stringify({
+    "action": "GetAllShows",
+    "limit": 12,
+    "return": "*",
+    "filter": { "type": "Movie" }
+  });
+  var basicAuth = btoa("u23584565:2023Tukkies2023");
+  req.setRequestHeader("Authorization", "Basic " + basicAuth);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.send(load);
+}
+
+function processMovies(images) {
+  var display = document.getElementsByClassName("image");
+  var names = document.getElementsByClassName("MOtitle");
+  var rating = document.getElementsByClassName("MOrating");
+  var genre = document.getElementsByClassName("movgen");
+
+  for (var i = 0; i < display.length; i++) {
+    display[i].src = images.data[i].imgURL;
+    names[i].innerText = images.data[i].title;
+    rating[i].innerHTML = images.data[i].rating;
+    genre[i].innerHTML = images.data[i].genres;
+
+    display[i].onclick = (function(imageData) {
+      return function() {
+        showModal(imageData);
+      };
+    })(images.data[i]);
+  }
+}
+
 window.onload = function() {
-    setCarousel();
-    setTVShows();
-    setMovies();
+  setCarousel();
+  setTVShows();
+  setMovies();
 };

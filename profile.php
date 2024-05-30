@@ -23,9 +23,9 @@
                                 <!-- username -->
                                 <h6 class="mb-2 custom-heading name" id="name"></h6>
                                 <!-- user phone number -->
-                                <p class="mb-1 custom-paragraph" id="phone"></p>
+                                <p class="mb-1 custom-paragraph" id="phones"></p>
                                 <!-- user email -->
-                                <p class="custom-paragraph" id="email"></p>
+                                <p class="custom-paragraph" id="emails"></p>
 </div>
      </div>
 <!--favourites starts -->
