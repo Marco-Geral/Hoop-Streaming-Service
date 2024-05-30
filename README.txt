@@ -100,3 +100,10 @@ This function simply removes that show from that user's favourites
   "action":"DeleteFavourites",
   "contentID":contentID
 }
+
+*** FOR GET FAVOURITES ***
+This function takes in a customer id and returns the content id of all the favourited shows for that user in an ARRAY
+{
+  "action":"GetFavourites",
+  "customerID":13
+}
