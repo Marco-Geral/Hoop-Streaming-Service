@@ -26,9 +26,10 @@
                                 <p class="mb-1 custom-paragraph" id="phones"></p>
                                 <!-- user email -->
                                 <p class="custom-paragraph" id="emails"></p>
+								<button id="logout-button" class="logout-button" onclick="logout()">Logout</button>
 </div>
      </div>
-<!--favourites starts -->
+
 <section id="spec" class="p_3 bg_dark">
 			<div class="container-xl">
 			<div class="row stream_1 text-center">
@@ -218,6 +219,17 @@
 				</div>
 			</div>
 			</section>
+
+            
+			<br>
+			<br>
+
+			<script>
+    document.getElementById("logout-button").addEventListener("click", function() {
+        window.location.href = "logout.php";
+    });
+</script>
+
 </body>
 </html>
 

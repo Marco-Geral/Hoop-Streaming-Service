@@ -8,6 +8,10 @@ function setDetails(){
 	document.getElementById("phones").innerHTML = phone;
 }
 
+function logout(){
+	localStorage.clear();
+	window.location = "welcomePage.php";
+}
 function getFavourites() {
   var req = new XMLHttpRequest();
   req.open("POST", "https://wheatley.cs.up.ac.za/u23584565/COS221/221api.php", true);
