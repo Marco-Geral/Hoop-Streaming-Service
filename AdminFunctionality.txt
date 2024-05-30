@@ -1,0 +1,63 @@
+Functionality needed for Admin:
+
+Update Show, Add Show, Delete Show 
+
+Idea: Admins have access to an extra page of the website where they can choose to update or delete a show based on the show title. or to add an entirely new show.
+
+Update Show: 
+Required Fields: Title of show ('title')
+they can choose to update any or all of the following fields:
+title, director, rating, actors (this will simply add new actors), genre (this will also just add another genre), description, studio, duration (if we're adding that?),  image url.
+suggestion: provide a space for them to add the title of the show to be updated and another section where they can add the new values for each field. If they don't add any content in this second field, return an error.
+Json body received:
+This call will be used by Admins ONLY to add a film/show to the database
+{
+  "action":"AddShow"
+  "type":"Movie",
+  "title":"The Lord of The Rings",
+  "director":"Peter Jackson"
+  "rating":3,
+  "description":"Movie about destroying a ring",
+  "release_date":"2003-12-17"
+  "studio":"Warner Brothers",
+  "imgURL":"/path_to_img",
+  "genre_type":"Fantasy"
+  "actor_name":["Elijah Wood","Orlando Bloom","Christopher Lee"],
+  "review":"Finest film ever produced"
+}
+
+Add Show:
+Required Fields: Title of show
+You can make all of them required if you feel it is necessary.
+Json body received:
+This call will be used by Admins ONLY to add a film/show to the database
+{
+  "action":"AddShow"
+  "type":"Movie",
+  "title":"The Lord of The Rings",
+  "director":"Peter Jackson"
+  "rating":3,
+  "description":"Movie about destroying a ring",
+  "release_date":"2003-12-17"
+  "studio":"Warner Brothers",
+  "imgURL":"/path_to_img",
+  "genre_type":"Fantasy"
+  "actor_name":["Elijah Wood","Orlando Bloom","Christopher Lee"],
+  "review":"Finest film ever produced"
+}
+
+
+Delete Show:
+Required fields: Title of show 
+Json body received:
+This call is for Admin ONLY and allows them to DELETE a show from the database:
+{
+  "action":"DeleteShow",
+  "title":"The Lord of The Rings"
+}
+
+
+*NOTE: "Show" in this case refers to a movie or a tv show
+		"action" is used by the API to determine which function to call and is added in js
+
+*Suggestion/Question to all: Should we add functionality for the admins to delete reviews or am i making work where we don't need it?
